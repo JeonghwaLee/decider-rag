@@ -1,0 +1,86 @@
+{
+ "args": {
+  "ds": "hotpotqa",
+  "runs": [
+   "test6/pool_04",
+   "test6/pool_05",
+   "test6/pool_06",
+   "test6/pool_07"
+  ],
+  "pol": [
+   "big2e4_vllm=vdec:8197:dec-big2e4:runs/llmsel/vllm_dec_big2e4:0.18889160156250004:inf",
+   "big2e4_opt=decopt:runs/pilot8/router/big_ent_s2345_e4:0.18889160156250004:inf",
+   "big2e4_hf=dec:runs/pilot8/router/big_ent_s2345_e4:0.18889160156250004:inf",
+   "s1234_opt=decopt:runs/pilot7/router/ent_qd_s1234:0.0693359375:inf",
+   "qwen38_zs=llm:zs:edge:0.03925910589224437:inf",
+   "qwen38_shared=llm:shared:edge:0.2099067296540139:inf",
+   "tfidf_EN=tfidf:0.16412801175348646:inf",
+   "ruleN_tuned=ruleN_tuned:0.5:-0.4999203085899353",
+   "allN=allN"
+  ],
+  "fallback": "E",
+  "opt": false,
+  "tfidf_train": "legacy:train",
+  "idx": "runs/pilot8/trace/_index",
+  "trace": "runs/pilot8/trace/hotpotqa",
+  "out": "runs/e2e5x/hotpot_test6",
+  "limit": 0,
+  "block": 25
+ },
+ "policies": {
+  "big2e4_vllm": [
+   "vdec",
+   "8197",
+   "dec-big2e4",
+   "runs/llmsel/vllm_dec_big2e4",
+   "0.18889160156250004",
+   "inf"
+  ],
+  "big2e4_opt": [
+   "decopt",
+   "runs/pilot8/router/big_ent_s2345_e4",
+   "0.18889160156250004",
+   "inf"
+  ],
+  "big2e4_hf": [
+   "dec",
+   "runs/pilot8/router/big_ent_s2345_e4",
+   "0.18889160156250004",
+   "inf"
+  ],
+  "s1234_opt": [
+   "decopt",
+   "runs/pilot7/router/ent_qd_s1234",
+   "0.0693359375",
+   "inf"
+  ],
+  "qwen38_zs": [
+   "llm",
+   "zs",
+   "edge",
+   "0.03925910589224437",
+   "inf"
+  ],
+  "qwen38_shared": [
+   "llm",
+   "shared",
+   "edge",
+   "0.2099067296540139",
+   "inf"
+  ],
+  "tfidf_EN": [
+   "tfidf",
+   "0.16412801175348646",
+   "inf"
+  ],
+  "ruleN_tuned": [
+   "ruleN_tuned",
+   "0.5",
+   "-0.4999203085899353"
+  ],
+  "allN": [
+   "allN"
+  ]
+ },
+ "version": "e2e_ent5"
+}

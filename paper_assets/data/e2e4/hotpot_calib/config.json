@@ -1,0 +1,33 @@
+{
+ "args": {
+  "ds": "hotpotqa",
+  "runs": [
+   "train2/pool_00"
+  ],
+  "pol": [
+   "ruleN_tuned=ruleN_tuned:0.5:-0.4999203085899353",
+   "big2e4_EN=dec:runs/pilot8/router/big_ent_s2345_e4:0.18889160156250004:inf"
+  ],
+  "fallback": "E",
+  "opt": false,
+  "tfidf_train": "legacy:train",
+  "idx": "runs/pilot8/trace/_index",
+  "trace": "runs/pilot8/trace/hotpotqa",
+  "out": "runs/e2e4/hotpot_calib",
+  "limit": 100
+ },
+ "policies": {
+  "ruleN_tuned": [
+   "ruleN_tuned",
+   "0.5",
+   "-0.4999203085899353"
+  ],
+  "big2e4_EN": [
+   "dec",
+   "runs/pilot8/router/big_ent_s2345_e4",
+   "0.18889160156250004",
+   "inf"
+  ]
+ },
+ "version": "e2e_ent4"
+}

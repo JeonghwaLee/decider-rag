@@ -1,0 +1,40 @@
+{
+ "args": {
+  "ds": "musique",
+  "runs": [
+   "test/pool_00",
+   "test/pool_01"
+  ],
+  "pol": [
+   "joint_vllm=vdec:8198:dec-joint:runs/llmsel/vllm_dec_joint:-inf:0.14118652343750002",
+   "automix_k1=automix:N:-inf:1"
+  ],
+  "fallback": "N",
+  "opt": false,
+  "tfidf_train": null,
+  "idx": "runs/pilot9/trace/_index",
+  "trace": "runs/pilot9/trace/musique",
+  "out": "runs/automix/musique_k1",
+  "limit": 0,
+  "block": 25,
+  "cloud_port": 8393,
+  "edge_port": 8395
+ },
+ "policies": {
+  "joint_vllm": [
+   "vdec",
+   "8198",
+   "dec-joint",
+   "runs/llmsel/vllm_dec_joint",
+   "-inf",
+   "0.14118652343750002"
+  ],
+  "automix_k1": [
+   "automix",
+   "N",
+   "-inf",
+   "1"
+  ]
+ },
+ "version": "e2e_ent6"
+}

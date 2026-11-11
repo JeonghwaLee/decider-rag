@@ -1,0 +1,16 @@
+stream pilot8:hotpotqa:test4+pilot8:hotpotqa:test5+pilot8:hotpotqa:test6 n 3200 | fam E/N fb E x1.0 budget $ 0.1852 | orders 5
+  qd_gain      online F1 0.6165 $ 0.1855 (1.00x budget; per order 1.01 1.00 1.00 1.00 1.00) | fixed thr F1 0.6332 $ 0.2125 (1.15x)
+  qk_gain      online F1 0.6091 $ 0.1856 (1.00x budget; per order 1.02 0.99 1.01 1.00 0.99) | fixed thr F1 0.6172 $ 0.2077 (1.12x)
+  qd_cls       online F1 0.6187 $ 0.1854 (1.00x budget; per order 1.01 0.99 1.00 1.00 1.01) | fixed thr F1 0.6456 $ 0.2623 (1.42x)
+  emb_ridge    online F1 0.6078 $ 0.1853 (1.00x budget; per order 0.99 1.00 1.01 1.00 1.00) | fixed thr F1 0.6137 $ 0.1823 (0.98x)
+  emb_mlp      online F1 0.5951 $ 0.1846 (1.00x budget; per order 1.00 1.00 1.00 0.99 1.00) | fixed thr F1 0.6079 $ 0.2268 (1.22x)
+  tfidf        online F1 0.6042 $ 0.1858 (1.00x budget; per order 1.01 1.00 1.00 1.01 1.00) | fixed thr F1 0.6111 $ 0.1945 (1.05x)
+  big2e4       online F1 0.6241 $ 0.1860 (1.00x budget; per order 1.01 0.99 1.01 1.01 1.00) | fixed thr F1 0.6442 $ 0.2220 (1.20x)
+  j3_entc      online F1 0.6189 $ 0.1856 (1.00x budget; per order 1.01 1.00 1.02 0.99 0.99) | fixed thr F1 0.6475 $ 0.2473 (1.34x)
+  qd_gain - qk_gain      +0.0073 [+0.0017,+0.0130] | $ diff -0.0001
+  qd_gain - qd_cls       -0.0023 [-0.0070,+0.0023] | $ diff +0.0001
+  qd_gain - emb_ridge    +0.0087 [+0.0020,+0.0157] | $ diff +0.0002
+  qd_gain - emb_mlp      +0.0214 [+0.0145,+0.0281] | $ diff +0.0009
+  qd_gain - tfidf        +0.0123 [+0.0057,+0.0189] | $ diff -0.0003
+  qd_gain - big2e4       -0.0076 [-0.0135,-0.0016] | $ diff -0.0005
+  qd_gain - j3_entc      -0.0024 [-0.0078,+0.0029] | $ diff -0.0001

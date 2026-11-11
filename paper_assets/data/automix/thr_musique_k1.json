@@ -1,0 +1,9 @@
+{
+ "thr": -Infinity,
+ "rule": "max val F1 within x1 budget",
+ "val_f1": 0.409024531024531,
+ "val_cost": 1.2809345480792251,
+ "budget_x1": 1.8019162750000002,
+ "val_esc_rate": 0.0,
+ "feasible_x1": true
+}

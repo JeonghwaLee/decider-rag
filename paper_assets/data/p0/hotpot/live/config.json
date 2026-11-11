@@ -1,0 +1,48 @@
+{
+ "args": {
+  "ds": "hotpotqa",
+  "runs": [
+   "test6/pool_00",
+   "test6/pool_01",
+   "test6/pool_02",
+   "test6/pool_03",
+   "test6/pool_04",
+   "test6/pool_05",
+   "test6/pool_06",
+   "test6/pool_07"
+  ],
+  "pol": [
+   "pre=vdec:8497:pre-hotpot:runs/llmsel/vllm_dec_big2e4:0.19108946621418002:inf",
+   "post=learnedpost:E:0.026383151300251487:8498:post-hotpot:runs/p0_postgen_20261110/hotpot/export"
+  ],
+  "fallback": "E",
+  "opt": false,
+  "tfidf_train": null,
+  "idx": "runs/pilot8/trace/_index",
+  "trace": "runs/pilot8/trace/hotpotqa",
+  "out": "runs/p0_postgen_20261110/hotpot/live",
+  "limit": 0,
+  "block": 25,
+  "cloud_port": 8193,
+  "edge_port": 8195
+ },
+ "policies": {
+  "pre": [
+   "vdec",
+   "8497",
+   "pre-hotpot",
+   "runs/llmsel/vllm_dec_big2e4",
+   "0.19108946621418002",
+   "inf"
+  ],
+  "post": [
+   "learnedpost",
+   "E",
+   "0.026383151300251487",
+   "8498",
+   "post-hotpot",
+   "runs/p0_postgen_20261110/hotpot/export"
+  ]
+ },
+ "version": "e2e_postgen_p0"
+}

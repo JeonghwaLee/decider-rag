@@ -1,0 +1,8 @@
+hotpot_big2e4: n 150 | answer-bearing chunk present 0.74 | mean swapped 1.91
+  F1 E: orig 0.4897 swap 0.1663 diff -0.3234 [-0.3955,-0.2504]
+  F1 N: orig 0.6472 swap 0.3855 diff -0.2616 [-0.3306,-0.1947]
+  dEN: true gain orig +0.1574 swap +0.2192 change +0.0618 [-0.0172,+0.1424] | decider orig +0.2524 swap +0.2875 change +0.0351 [+0.0105,+0.0604]
+    per-question change: corr(true change, decider change) pearson +0.228 [+0.070,+0.371] spearman +0.237 | level corr(decider, true gain): orig +0.403 swap +0.115
+      true gain fell (<0)    n  36 decider change mean -0.0267
+      unchanged (=0)         n  69 decider change mean +0.0484
+      true gain rose (>0)    n  45 decider change mean +0.0643

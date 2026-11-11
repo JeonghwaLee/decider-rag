@@ -1,0 +1,54 @@
+{
+ "args": {
+  "ds": "musique",
+  "runs": [
+   "test/pool_00"
+  ],
+  "pol": [
+   "joint_vllm=vdec:8198:dec-joint:runs/llmsel/vllm_dec_joint:-inf:0.14118652343750002",
+   "automix=automix:N:1e-06",
+   "qwen38_think=llm:think:edge+think:-inf:0.999992110754487",
+   "qwen38_shared=llm:shared:edge+think:-inf:0.8531177699259935"
+  ],
+  "fallback": "N",
+  "opt": false,
+  "tfidf_train": null,
+  "idx": "runs/pilot9/trace/_index",
+  "trace": "runs/pilot9/trace/musique",
+  "out": "runs/automix/musique_test_b",
+  "limit": 0,
+  "block": 25,
+  "cloud_port": 8393,
+  "edge_port": 8395
+ },
+ "policies": {
+  "joint_vllm": [
+   "vdec",
+   "8198",
+   "dec-joint",
+   "runs/llmsel/vllm_dec_joint",
+   "-inf",
+   "0.14118652343750002"
+  ],
+  "automix": [
+   "automix",
+   "N",
+   "1e-06"
+  ],
+  "qwen38_think": [
+   "llm",
+   "think",
+   "edge+think",
+   "-inf",
+   "0.999992110754487"
+  ],
+  "qwen38_shared": [
+   "llm",
+   "shared",
+   "edge+think",
+   "-inf",
+   "0.8531177699259935"
+  ]
+ },
+ "version": "e2e_ent6"
+}

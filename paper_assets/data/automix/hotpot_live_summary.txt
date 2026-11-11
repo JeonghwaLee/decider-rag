@@ -1,0 +1,20 @@
+runs/automix/hotpot_test6 | common questions 1600 | deadline D = p90 wall of ruleN_tuned on runs/e2e4/hotpot_calib = 0.722 s | cached input price 0.1 x
+  automix        stage ms (mean over requests that ran the stage): retrieve 98.2 rerank 95.0 prune 80.7 edge 248.2 verify 754.0 cloud 182.0(n=704)
+  automix        E/N/T 896/704/0 | F1 0.6190 | $ answer 0.2125 + selector 0.0000 = 0.2125 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.2125 | wall mean 1.356 p50 1.298 p95 1.829 | DQ-F1 0.0002 (met 0.001)
+  big2e4_vllm    stage ms (mean over requests that ran the stage): retrieve 99.0 rerank 95.0 prune 81.6 decider 28.6 edge 217.8(n=828) cloud 182.7(n=772)
+  big2e4_vllm    E/N/T 828/772/0 | F1 0.6281 | $ answer 0.2385 + selector 0.0000 = 0.2385 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.2385 | wall mean 0.505 p50 0.446 p95 0.799 | DQ-F1 0.5795 (met 0.912)
+  qwen38_shared  stage ms (mean over requests that ran the stage): retrieve 97.3 rerank 95.5 prune 79.9 selector 164.4 edge 224.4(n=705) cloud 140.6(n=895)
+  qwen38_shared  E/N/T 705/895/0 | F1 0.6289 | $ answer 0.2544 + selector 0.5163 = 0.7708 | cache hits sel 0 ans 366 tok (sel prompt 1908) -> total $ w/ cache 0.6820 | wall mean 0.615 p50 0.551 p95 0.934 | DQ-F1 0.4925 (met 0.779)
+  qwen38_zs      stage ms (mean over requests that ran the stage): retrieve 97.7 rerank 96.3 prune 80.2 selector 165.0 edge 224.7(n=735) cloud 173.2(n=865)
+  qwen38_zs      E/N/T 735/865/0 | F1 0.6274 | $ answer 0.2441 + selector 0.5185 = 0.7626 | cache hits sel 0 ans 0 tok (sel prompt 1916) -> total $ w/ cache 0.7626 | wall mean 0.636 p50 0.560 p95 0.974 | DQ-F1 0.4334 (met 0.682)
+  big2e4_vllm - automix        F1 +0.0091 [-0.0036,+0.0214] | total $ +0.0260 [+0.0084,+0.0437] (w/ cache +0.0260) | wall -0.851 [-0.860,-0.842] | DQ-F1 +0.5793 [+0.5576,+0.6012]
+  big2e4_vllm - qwen38_shared  F1 -0.0008 [-0.0125,+0.0106] | total $ -0.5323 [-0.5542,-0.5110] (w/ cache -0.4435) | wall -0.110 [-0.116,-0.103] | DQ-F1 +0.0870 [+0.0696,+0.1048]
+  big2e4_vllm - qwen38_zs      F1 +0.0007 [-0.0107,+0.0119] | total $ -0.5242 [-0.5457,-0.5029] (w/ cache -0.5242) | wall -0.131 [-0.138,-0.124] | DQ-F1 +0.1461 [+0.1273,+0.1652]
+  DQ-F1 vs deadline (x D): 0.6x=0.433s 0.7x=0.505s 0.8x=0.578s 0.9x=0.650s 1.0x=0.722s 1.1x=0.794s 1.25x=0.902s 1.5x=1.083s 2.0x=1.444s
+    automix        0.0000 0.0000 0.0000 0.0002 0.0002 0.0002 0.0002 0.0367 0.4766
+    big2e4_vllm    0.2842 0.3939 0.4752 0.5413 0.5795 0.6052 0.6179 0.6259 0.6275
+    qwen38_shared  0.0121 0.2137 0.3346 0.4125 0.4925 0.5459 0.5946 0.6167 0.6284
+    qwen38_zs      0.0140 0.2019 0.3291 0.3983 0.4334 0.5125 0.5805 0.6143 0.6271
+    big2e4_vllm - automix        +0.2842[+0.2632] +0.3939[+0.3714] +0.4752[+0.4525] +0.5411[+0.5189] +0.5793[+0.5576] +0.6050[+0.5836] +0.6177[+0.5965] +0.5892[+0.5672] +0.1509[+0.1320]
+    big2e4_vllm - qwen38_shared  +0.2721[+0.2513] +0.1802[+0.1591] +0.1406[+0.1209] +0.1288[+0.1096] +0.0870[+0.0696] +0.0593[+0.0429] +0.0233[+0.0094] +0.0092[-0.0037] -0.0009[-0.0128]
+    big2e4_vllm - qwen38_zs      +0.2702[+0.2497] +0.1920[+0.1712] +0.1462[+0.1269] +0.1429[+0.1238] +0.1461[+0.1273] +0.0927[+0.0756] +0.0374[+0.0232] +0.0116[-0.0010] +0.0004[-0.0111]

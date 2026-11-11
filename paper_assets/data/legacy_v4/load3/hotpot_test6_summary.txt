@@ -1,0 +1,31 @@
+runs/load3/hotpot_test6 | deadline D 0.722 s | ref big2e4_vllm
+== rate 2.4/s | seeds [1, 2] | policies 5
+  big2e4_vllm    F1 0.6344 | $ 0.2393 | lat mean   0.60 p50   0.55 p95   1.01 | DQ-F1 0.4964 (met 0.779) | thr 2.40/s goodput 1.19/s | sel ms mean 37 p95 66 | local wait 0.00s | E/N/T 830/770/0 err 0
+  qwen38_shared  F1 0.6319 | $ 0.7752 | lat mean   0.82 p50   0.77 p95   1.36 | DQ-F1 0.2640 (met 0.415) | thr 2.40/s goodput 0.63/s | sel ms mean 235 p95 410 | local wait 0.00s | E/N/T 702/898/0 err 0
+  qwen38_zs      F1 0.6299 | $ 0.7615 | lat mean   0.82 p50   0.78 p95   1.34 | DQ-F1 0.2616 (met 0.411) | thr 2.40/s goodput 0.63/s | sel ms mean 231 p95 398 | local wait 0.00s | E/N/T 764/836/0 err 0
+  ruleN_tuned    F1 0.6229 | $ 0.2461 | lat mean   0.58 p50   0.53 p95   0.96 | DQ-F1 0.5225 (met 0.824) | thr 2.40/s goodput 1.26/s | sel ms mean 0 p95 0 | local wait 0.00s | E/N/T 772/828/0 err 0
+  tfidf_EN       F1 0.5943 | $ 0.1952 | lat mean   0.57 p50   0.52 p95   0.96 | DQ-F1 0.4987 (met 0.820) | thr 2.40/s goodput 1.20/s | sel ms mean 1 p95 1 | local wait 0.00s | E/N/T 962/638/0 err 0
+    big2e4_vllm - qwen38_shared  F1 +0.0025 [-0.0095,+0.0149] | $ -0.5358 [-0.5573,-0.5151] | lat -0.2194 [-0.2312,-0.2078] | DQ-F1 +0.2324 [+0.2118,+0.2534]
+    big2e4_vllm - qwen38_zs      F1 +0.0044 [-0.0086,+0.0174] | $ -0.5222 [-0.5439,-0.5011] | lat -0.2176 [-0.2277,-0.2074] | DQ-F1 +0.2348 [+0.2146,+0.2550]
+    big2e4_vllm - ruleN_tuned    F1 +0.0115 [-0.0027,+0.0257] | $ -0.0068 [-0.0260,+0.0121] | lat +0.0229 [+0.0147,+0.0311] | DQ-F1 -0.0261 [-0.0435,-0.0090]
+    big2e4_vllm - tfidf_EN       F1 +0.0400 [+0.0268,+0.0534] | $ +0.0441 [+0.0263,+0.0626] | lat +0.0348 [+0.0264,+0.0433] | DQ-F1 -0.0023 [-0.0200,+0.0155]
+== rate 6.4/s | seeds [1, 2] | policies 5
+  big2e4_vllm    F1 0.6362 | $ 0.2393 | lat mean   0.81 p50   0.74 p95   1.41 | DQ-F1 0.3191 (met 0.480) | thr 6.31/s goodput 2.01/s | sel ms mean 49 p95 97 | local wait 0.10s | E/N/T 830/770/0 err 0
+  qwen38_shared  F1 0.6300 | $ 0.7752 | lat mean   1.17 p50   1.12 p95   1.81 | DQ-F1 0.0698 (met 0.101) | thr 6.31/s goodput 0.44/s | sel ms mean 327 p95 471 | local wait 0.05s | E/N/T 703/897/0 err 0
+  qwen38_zs      F1 0.6354 | $ 0.7610 | lat mean   1.19 p50   1.12 p95   1.89 | DQ-F1 0.0717 (met 0.104) | thr 6.29/s goodput 0.45/s | sel ms mean 332 p95 479 | local wait 0.05s | E/N/T 771/829/0 err 0
+  ruleN_tuned    F1 0.6241 | $ 0.2461 | lat mean   0.80 p50   0.72 p95   1.44 | DQ-F1 0.3159 (met 0.498) | thr 6.32/s goodput 1.99/s | sel ms mean 0 p95 2 | local wait 0.11s | E/N/T 772/828/0 err 0
+  tfidf_EN       F1 0.6004 | $ 0.1952 | lat mean   0.68 p50   0.63 p95   1.16 | DQ-F1 0.3901 (met 0.647) | thr 6.31/s goodput 2.46/s | sel ms mean 1 p95 2 | local wait 0.05s | E/N/T 962/638/0 err 0
+    big2e4_vllm - qwen38_shared  F1 +0.0062 [-0.0063,+0.0190] | $ -0.5359 [-0.5572,-0.5152] | lat -0.3590 [-0.3749,-0.3436] | DQ-F1 +0.2493 [+0.2286,+0.2703]
+    big2e4_vllm - qwen38_zs      F1 +0.0008 [-0.0123,+0.0142] | $ -0.5216 [-0.5434,-0.5003] | lat -0.3833 [-0.3998,-0.3670] | DQ-F1 +0.2474 [+0.2272,+0.2679]
+    big2e4_vllm - ruleN_tuned    F1 +0.0121 [-0.0024,+0.0268] | $ -0.0068 [-0.0260,+0.0121] | lat +0.0085 [-0.0012,+0.0178] | DQ-F1 +0.0032 [-0.0126,+0.0189]
+    big2e4_vllm - tfidf_EN       F1 +0.0358 [+0.0224,+0.0493] | $ +0.0441 [+0.0263,+0.0626] | lat +0.1296 [+0.1194,+0.1395] | DQ-F1 -0.0710 [-0.0896,-0.0528]
+== rate 9.6/s | seeds [1, 2] | policies 5
+  big2e4_vllm    F1 0.6377 | $ 0.2394 | lat mean   6.26 p50   6.12 p95  11.78 | DQ-F1 0.0073 (met 0.010) | thr 8.40/s goodput 0.06/s | sel ms mean 55 p95 108 | local wait 5.47s | E/N/T 830/770/0 err 0
+  qwen38_shared  F1 0.6289 | $ 0.7746 | lat mean   2.77 p50   2.68 p95   4.57 | DQ-F1 0.0031 (met 0.004) | thr 9.16/s goodput 0.03/s | sel ms mean 366 p95 492 | local wait 1.46s | E/N/T 713/887/0 err 0
+  qwen38_zs      F1 0.6321 | $ 0.7593 | lat mean   2.66 p50   2.53 p95   4.44 | DQ-F1 0.0026 (met 0.003) | thr 9.15/s goodput 0.02/s | sel ms mean 370 p95 495 | local wait 1.34s | E/N/T 781/819/0 err 0
+  ruleN_tuned    F1 0.6224 | $ 0.2461 | lat mean   6.12 p50   6.16 p95  11.47 | DQ-F1 0.0080 (met 0.011) | thr 8.44/s goodput 0.07/s | sel ms mean 1 p95 2 | local wait 5.36s | E/N/T 772/828/0 err 0
+  tfidf_EN       F1 0.5981 | $ 0.1952 | lat mean   2.02 p50   1.90 p95   3.61 | DQ-F1 0.0442 (met 0.066) | thr 9.19/s goodput 0.41/s | sel ms mean 2 p95 3 | local wait 1.32s | E/N/T 962/638/0 err 0
+    big2e4_vllm - qwen38_shared  F1 +0.0088 [-0.0043,+0.0222] | $ -0.5352 [-0.5568,-0.5144] | lat +3.4888 [+3.3647,+3.6118] | DQ-F1 +0.0042 [-0.0001,+0.0089]
+    big2e4_vllm - qwen38_zs      F1 +0.0056 [-0.0075,+0.0186] | $ -0.5200 [-0.5421,-0.4987] | lat +3.6008 [+3.4773,+3.7246] | DQ-F1 +0.0047 [+0.0005,+0.0092]
+    big2e4_vllm - ruleN_tuned    F1 +0.0154 [+0.0011,+0.0299] | $ -0.0068 [-0.0260,+0.0121] | lat +0.1425 [+0.1302,+0.1549] | DQ-F1 -0.0007 [-0.0036,+0.0021]
+    big2e4_vllm - tfidf_EN       F1 +0.0396 [+0.0264,+0.0528] | $ +0.0441 [+0.0263,+0.0626] | lat +4.2409 [+4.1164,+4.3646] | DQ-F1 -0.0369 [-0.0461,-0.0282]

@@ -1,0 +1,45 @@
+{
+  "test": "pilot8:hotpotqa:test6",
+  "n": 1600,
+  "primary_sha256": "8c339bb3090be35c62365ed616ec89f14a82de1d89a66fee03831b9e54ec6b2d",
+  "budget": 0.18521610000000002,
+  "metrics": {
+    "pre": {
+      "fixed_f1": 0.6279007174255005,
+      "fixed_cost": 0.23607927500000003,
+      "online_f1": 0.6082897191304002,
+      "online_cost": 0.1861468125,
+      "online_budget_ratio": 1.00502500862506
+    },
+    "post": {
+      "fixed_f1": 0.6552811077374051,
+      "fixed_cost": 0.28550204375,
+      "online_f1": 0.6313746147634649,
+      "online_cost": 0.18617972000000002,
+      "online_budget_ratio": 1.0052026794646902
+    }
+  },
+  "post_minus_pre": {
+    "fixed_f1": [
+      0.027380390311904552,
+      0.01676153572718006,
+      0.03829251561452407
+    ],
+    "fixed_cost": [
+      0.04942276875,
+      0.031786126406250004,
+      0.06692192203125
+    ],
+    "online_f1": [
+      0.023084895633064716,
+      0.013995281655542919,
+      0.03243865309982573
+    ],
+    "online_cost": [
+      3.2907499999998146e-05,
+      -0.012948482718750001,
+      0.013304739374999992
+    ]
+  },
+  "note": "Offline replay on reused questions. Cloud-token cost includes compulsory C candidate and R, with reuse after truncation. Online means past-only budget replay, not live latency. Report realized spend ratios; do not declare exact equal-spend if ratios differ materially."
+}

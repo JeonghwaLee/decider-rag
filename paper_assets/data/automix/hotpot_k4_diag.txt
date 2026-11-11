@@ -1,0 +1,14 @@
+runs/automix/hotpot_k4 | common questions 1600 | policies ['automix_k4', 'big2e4_vllm'] | D = 0.722 s
+(1) DQ-F1 vs deadline: 0.6xD=0.43s 0.8xD=0.58s 1.0xD=0.72s 1.25xD=0.90s 1.5xD=1.08s 2.0xD=1.44s 2.5xD=1.80s 3.0xD=2.17s 4.0xD=2.89s 6.0xD=4.33s
+  automix_k4       0.0000 0.0006 0.0013 0.0025 0.0630 0.4983 0.5896 0.6084 0.6133 0.6133 | F1 0.6133 wall mean 1.321 p50 1.260 p95 1.794
+  big2e4_vllm      0.2835 0.4801 0.5822 0.6179 0.6271 0.6281 0.6281 0.6281 0.6281 0.6281 | F1 0.6281 wall mean 0.505 p50 0.448 p95 0.803
+  big2e4_vllm - automix_k4: +0.2835[+0.2627] +0.4795[+0.4566] +0.5810[+0.5591] +0.6154[+0.5940] +0.5641[+0.5422] +0.1298[+0.1113] +0.0385[+0.0241] +0.0197[+0.0059] +0.0148[+0.0012] +0.0148[+0.0012]
+(2) stage times, mean ms over requests that ran the stage (n):
+  big2e4_vllm      retrieve 99.3(n=1600) rerank 95.6(n=1600) prune 83.4(n=1600) decider 28.3(n=1600) edge 218.0(n=828) cloud 176.8(n=772)
+  automix_k4       retrieve 99.5(n=1600) rerank 95.7(n=1600) prune 83.1(n=1600) edge 248.6(n=1600) verify 725.1(n=1600) cloud 175.2(n=626)
+(3) cascade (k=4): escalation rate 0.391 | verification output tokens/request 892 | verification cloud $/1k 0.0000 | all-unparsable 0.001 (escalations from it 0.001)
+  accepted candidate with F1<0.5 (wrong accept) 0.191 | accepted with F1>=0.5 0.417 | escalated, candidate F1>=0.5 and no gain (discarded good) 0.111 | escalated with gain 0.138 | escalated, candidate F1<0.5, no gain 0.142
+(4) both keep                          n   588 (0.367) | F1 big2e4_vllm 0.7687 vs cascade 0.7687 | diff +0.0000 [+0.0000,+0.0000] | wall 0.512 vs 1.208
+(4) both escalate                      n   386 (0.241) | F1 big2e4_vllm 0.5437 vs cascade 0.5386 | diff +0.0051 [-0.0044,+0.0154] | wall 0.470 vs 1.482
+(4) Decider escalates, cascade keeps   n   386 (0.241) | F1 big2e4_vllm 0.6459 vs cascade 0.4925 | diff +0.1534 [+0.1146,+0.1923] | wall 0.490 vs 1.256
+(4) Decider keeps, cascade escalates   n   240 (0.150) | F1 big2e4_vllm 0.3907 vs cascade 0.5472 | diff -0.1565 [-0.2100,-0.1036] | wall 0.568 vs 1.441

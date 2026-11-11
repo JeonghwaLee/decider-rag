@@ -1,0 +1,42 @@
+{
+ "args": {
+  "ds": "musique",
+  "runs": [
+   "test/pool_00",
+   "test/pool_01"
+  ],
+  "pol": [
+   "pre=vdec:8597:pre-musique:runs/llmsel/vllm_dec_joint:-inf:0.14240484200417997",
+   "post=learnedpost:N:0.07944114804267884:8598:post-musique:runs/p0_postgen_20261110/musique/export"
+  ],
+  "fallback": "N",
+  "opt": false,
+  "tfidf_train": null,
+  "idx": "runs/pilot9/trace/_index",
+  "trace": "runs/pilot9/trace/musique",
+  "out": "runs/p0_postgen_20261110/musique/live",
+  "limit": 0,
+  "block": 25,
+  "cloud_port": 8393,
+  "edge_port": 8395
+ },
+ "policies": {
+  "pre": [
+   "vdec",
+   "8597",
+   "pre-musique",
+   "runs/llmsel/vllm_dec_joint",
+   "-inf",
+   "0.14240484200417997"
+  ],
+  "post": [
+   "learnedpost",
+   "N",
+   "0.07944114804267884",
+   "8598",
+   "post-musique",
+   "runs/p0_postgen_20261110/musique/export"
+  ]
+ },
+ "version": "e2e_postgen_p0"
+}

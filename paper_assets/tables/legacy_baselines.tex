@@ -1,0 +1,12 @@
+\begin{tabular}{@{}llrl@{}}
+\toprule
+Workload & Baseline & F1$\uparrow$ & Ours$-$X [95\% CI]\\
+\midrule
+HotpotQA & TF-IDF & 0.593 & +0.034 [+0.022, +0.047]\\
+HotpotQA & EC-RAG rule (tuned) & 0.619 & +0.009 [-0.005, +0.022]\\
+HotpotQA & All-C & \textbf{0.666} & -0.039 [-0.050, -0.028]\\
+MuSiQue & TF-IDF & \textbf{0.450} & +0.049 [+0.026, +0.073]\\
+MuSiQue & EC-RAG rule (tuned) & 0.396 & +0.103 [+0.068, +0.138]\\
+MuSiQue & All-C & 0.387 & +0.112 [+0.082, +0.143]\\
+\bottomrule
+\end{tabular}

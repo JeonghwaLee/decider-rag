@@ -1,0 +1,35 @@
+stream pilot9:musique:test n 800 | val pilot9:musique:val n 400 | base $ 1.8019 | cand N | orders 5
+  verification: mean score val 0.300 test 0.312 | parsable samples/8 test 0.75 (0 parsable: 0.249) | cloud $ per 1k 0.7764 | mean sec 30.612 p95 35.215
+== x0.5 budget $ 0.9010
+  decider        online F1 0.3994 $ 0.9204 (1.02x) | fixed thr F1 0.4312 $ 0.9994 (1.11x)
+  qwen38_think   online F1 0.3812 $ 0.8982 (1.00x) | fixed thr F1 0.4016 $ 0.9064 (1.01x)
+  automix        online F1 0.3861 $ 1.2259 (1.36x) | fixed thr F1 0.3861 $ 1.2259 (1.36x) | val INFEASIBLE (never-escalate already over budget) | escalate iff score < -inf (rate 0.000)
+  automix diag: kept a candidate that escalation would improve 0.201 | escalated without gain 0.000 | escalated with gain 0.000 | escalated because all samples were unparsable 0.000 (all-unparsable 0.249)
+  automix cost split per 1k: N 0.4495 | verification 0.7764 | T on escalation 0.0000
+  decider - qwen38_think   +0.0182 [+0.0037,+0.0329] | $ diff +0.0222
+  decider - automix        +0.0133 [-0.0028,+0.0289] | $ diff -0.3055
+== x0.75 budget $ 1.3514
+  decider        online F1 0.4293 $ 1.3681 (1.01x) | fixed thr F1 0.4544 $ 1.3331 (0.99x)
+  qwen38_think   online F1 0.4157 $ 1.3473 (1.00x) | fixed thr F1 0.4236 $ 1.3694 (1.01x)
+  automix        online F1 0.3900 $ 1.3339 (0.99x) | fixed thr F1 0.3861 $ 1.2259 (0.91x) | val feasible | escalate iff score < 0.000 (rate 0.000)
+  automix diag: kept a candidate that escalation would improve 0.201 | escalated without gain 0.000 | escalated with gain 0.000 | escalated because all samples were unparsable 0.000 (all-unparsable 0.249)
+  automix cost split per 1k: N 0.4495 | verification 0.7764 | T on escalation 0.0000
+  decider - qwen38_think   +0.0136 [-0.0011,+0.0288] | $ diff +0.0208
+  decider - automix        +0.0393 [+0.0226,+0.0560] | $ diff +0.0342
+== x1.0 budget $ 1.8019
+  decider        online F1 0.4599 $ 1.7917 (0.99x) | fixed thr F1 0.4747 $ 2.0079 (1.11x)
+  qwen38_think   online F1 0.4366 $ 1.7986 (1.00x) | fixed thr F1 0.4417 $ 1.9000 (1.05x)
+  automix        online F1 0.4099 $ 1.8178 (1.01x) | fixed thr F1 0.3861 $ 1.2259 (0.68x) | val feasible | escalate iff score < 0.000 (rate 0.000)
+  automix diag: kept a candidate that escalation would improve 0.201 | escalated without gain 0.000 | escalated with gain 0.000 | escalated because all samples were unparsable 0.000 (all-unparsable 0.249)
+  automix cost split per 1k: N 0.4495 | verification 0.7764 | T on escalation 0.0000
+  decider - qwen38_think   +0.0233 [+0.0100,+0.0369] | $ diff -0.0070
+  decider - automix        +0.0500 [+0.0346,+0.0655] | $ diff -0.0262
+== x1.5 budget $ 2.7029
+  decider        online F1 0.4839 $ 2.6907 (1.00x) | fixed thr F1 0.4889 $ 3.0221 (1.12x)
+  qwen38_think   online F1 0.4777 $ 2.6971 (1.00x) | fixed thr F1 0.4889 $ 3.0410 (1.13x)
+  automix        online F1 0.4291 $ 2.5140 (0.93x) | fixed thr F1 0.3861 $ 1.2259 (0.45x) | val feasible | escalate iff score < 0.000 (rate 0.000)
+  automix diag: kept a candidate that escalation would improve 0.201 | escalated without gain 0.000 | escalated with gain 0.000 | escalated because all samples were unparsable 0.000 (all-unparsable 0.249)
+  automix cost split per 1k: N 0.4495 | verification 0.7764 | T on escalation 0.0000
+  decider - qwen38_think   +0.0062 [+0.0007,+0.0119] | $ diff -0.0065
+  decider - automix        +0.0548 [+0.0404,+0.0693] | $ diff +0.1766
+  cascade test curve (escalate iff score <= t): t=0.000:F1 0.4790 $ 3.6544 esc 0.69 t=0.125:F1 0.4790 $ 3.6544 esc 0.69 t=0.250:F1 0.4790 $ 3.6544 esc 0.69 t=0.375:F1 0.4790 $ 3.6544 esc 0.69 t=0.500:F1 0.4790 $ 3.6544 esc 0.69 t=0.625:F1 0.4790 $ 3.6544 esc 0.69 t=0.750:F1 0.4790 $ 3.6544 esc 0.69 t=0.875:F1 0.4790 $ 3.6544 esc 0.69 t=1.000:F1 0.4889 $ 4.1911 esc 1.00

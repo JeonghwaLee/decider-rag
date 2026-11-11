@@ -1,0 +1,31 @@
+runs/load3/musique_test | deadline D 23.871 s | ref joint_vllm
+== rate 0.453/s | seeds [1, 2] | policies 5
+  joint_vllm     F1 0.4903 | $ 1.9799 | lat mean  13.63 p50   2.94 p95  61.95 | DQ-F1 0.4511 (met 0.789) | thr 0.43/s goodput 0.19/s | sel ms mean 31 p95 56 | local wait 0.00s | E/N/T 0/328/472 err 0
+  qwen38_shared  F1 0.4519 | $ 3.0758 | lat mean  17.11 p50   4.45 p95  69.43 | DQ-F1 0.3999 (met 0.764) | thr 0.42/s goodput 0.17/s | sel ms mean 224 p95 379 | local wait 0.00s | E/N/T 0/285/515 err 0
+  qwen38_think   F1 0.4536 | $ 5.5777 | lat mean  52.23 p50  42.37 p95 147.44 | DQ-F1 0.1897 (met 0.321) | thr 0.41/s goodput 0.08/s | sel ms mean 30556 p95 56660 | local wait 0.01s | E/N/T 0/367/432 err 1
+  ruleT_tuned    F1 0.3862 | $ 2.4334 | lat mean  20.96 p50   7.07 p95  72.85 | DQ-F1 0.3268 (met 0.695) | thr 0.42/s goodput 0.14/s | sel ms mean 0 p95 0 | local wait 0.00s | E/N/T 234/0/566 err 0
+  tfidf_x1       F1 0.4550 | $ 1.7819 | lat mean  11.43 p50   2.07 p95  58.68 | DQ-F1 0.4292 (met 0.834) | thr 0.42/s goodput 0.18/s | sel ms mean 1 p95 1 | local wait 0.00s | E/N/T 0/354/446 err 0
+    joint_vllm - qwen38_shared  F1 +0.0384 [+0.0190,+0.0574] | $ -1.0959 [-1.2994,-0.8932] | lat -3.4800 [-5.2606,-1.7396] | DQ-F1 +0.0512 [+0.0295,+0.0729]
+    joint_vllm - qwen38_think   F1 +0.0367 [+0.0180,+0.0547] | $ -3.5978 [-3.8384,-3.3646] | lat -38.5962 [-41.3957,-35.8736] | DQ-F1 +0.2614 [+0.2327,+0.2900]
+    joint_vllm - ruleT_tuned    F1 +0.1041 [+0.0796,+0.1279] | $ -0.4535 [-0.6477,-0.2671] | lat -7.3341 [-9.0652,-5.6662] | DQ-F1 +0.1244 [+0.0983,+0.1505]
+    joint_vllm - tfidf_x1       F1 +0.0353 [+0.0175,+0.0524] | $ +0.1980 [+0.0283,+0.3637] | lat +2.1956 [+0.7490,+3.5954] | DQ-F1 +0.0219 [+0.0018,+0.0415]
+== rate 1.21/s | seeds [1, 2] | policies 5
+  joint_vllm     F1 0.4869 | $ 2.0126 | lat mean  22.84 p50   4.66 p95 105.51 | DQ-F1 0.4229 (met 0.729) | thr 1.00/s goodput 0.42/s | sel ms mean 32 p95 56 | local wait 0.00s | E/N/T 0/328/472 err 0
+  qwen38_shared  F1 0.4524 | $ 3.1132 | lat mean  31.83 p50   7.80 p95 133.71 | DQ-F1 0.3514 (met 0.665) | thr 0.97/s goodput 0.34/s | sel ms mean 245 p95 435 | local wait 0.00s | E/N/T 0/281/519 err 0
+  qwen38_think   F1 0.4537 | $ 5.3852 | lat mean 161.67 p50 159.19 p95 312.84 | DQ-F1 0.0189 (met 0.049) | thr 0.63/s goodput 0.01/s | sel ms mean 122325 p95 238837 | local wait 0.02s | E/N/T 0/394/406 err 0
+  ruleT_tuned    F1 0.3876 | $ 2.4016 | lat mean  32.41 p50   9.89 p95 114.71 | DQ-F1 0.3086 (met 0.644) | thr 0.96/s goodput 0.30/s | sel ms mean 0 p95 0 | local wait 0.00s | E/N/T 234/0/566 err 0
+  tfidf_x1       F1 0.4568 | $ 1.8148 | lat mean  18.88 p50   3.25 p95  99.28 | DQ-F1 0.4107 (met 0.782) | thr 1.00/s goodput 0.41/s | sel ms mean 1 p95 1 | local wait 0.00s | E/N/T 0/354/446 err 0
+    joint_vllm - qwen38_shared  F1 +0.0345 [+0.0132,+0.0551] | $ -1.1006 [-1.3042,-0.9027] | lat -8.9814 [-12.1255,-5.9105] | DQ-F1 +0.0715 [+0.0488,+0.0945]
+    joint_vllm - qwen38_think   F1 +0.0332 [+0.0136,+0.0531] | $ -3.3726 [-3.5960,-3.1503] | lat -138.8290 [-144.5186,-133.1474] | DQ-F1 +0.4040 [+0.3723,+0.4351]
+    joint_vllm - ruleT_tuned    F1 +0.0992 [+0.0758,+0.1224] | $ -0.3889 [-0.5802,-0.1988] | lat -9.5673 [-12.3180,-6.8463] | DQ-F1 +0.1143 [+0.0882,+0.1398]
+    joint_vllm - tfidf_x1       F1 +0.0300 [+0.0124,+0.0478] | $ +0.1978 [+0.0262,+0.3684] | lat +3.9653 [+1.5908,+6.3318] | DQ-F1 +0.0122 [-0.0081,+0.0319]
+== rate 1.81/s | seeds [1, 2] | policies 5
+  joint_vllm     F1 0.4984 | $ 2.0150 | lat mean  28.56 p50   5.88 p95 135.14 | DQ-F1 0.4282 (met 0.713) | thr 1.31/s goodput 0.56/s | sel ms mean 32 p95 56 | local wait 0.00s | E/N/T 0/328/472 err 0
+  qwen38_shared  F1 0.4513 | $ 3.1140 | lat mean  46.77 p50  18.60 p95 179.35 | DQ-F1 0.2809 (met 0.541) | thr 1.17/s goodput 0.33/s | sel ms mean 3493 p95 16578 | local wait 0.00s | E/N/T 0/282/518 err 0
+  qwen38_think   F1 0.4361 | $ 5.4411 | lat mean 212.95 p50 211.70 p95 394.67 | DQ-F1 0.0238 (met 0.035) | thr 0.64/s goodput 0.02/s | sel ms mean 172303 p95 324506 | local wait 0.02s | E/N/T 0/379/416 err 5
+  ruleT_tuned    F1 0.3897 | $ 2.3785 | lat mean  38.59 p50  13.58 p95 134.69 | DQ-F1 0.2780 (met 0.594) | thr 1.23/s goodput 0.34/s | sel ms mean 0 p95 0 | local wait 0.00s | E/N/T 234/0/566 err 0
+  tfidf_x1       F1 0.4585 | $ 1.8486 | lat mean  23.54 p50   3.78 p95 121.01 | DQ-F1 0.4033 (met 0.759) | thr 1.30/s goodput 0.52/s | sel ms mean 1 p95 1 | local wait 0.00s | E/N/T 0/354/446 err 0
+    joint_vllm - qwen38_shared  F1 +0.0471 [+0.0263,+0.0678] | $ -1.0990 [-1.3010,-0.9018] | lat -18.2128 [-22.2318,-14.1326] | DQ-F1 +0.1473 [+0.1212,+0.1731]
+    joint_vllm - qwen38_think   F1 +0.0623 [+0.0415,+0.0831] | $ -3.4261 [-3.6638,-3.1978] | lat -184.3897 [-192.0947,-176.7950] | DQ-F1 +0.4044 [+0.3734,+0.4356]
+    joint_vllm - ruleT_tuned    F1 +0.1087 [+0.0845,+0.1334] | $ -0.3636 [-0.5544,-0.1752] | lat -10.0303 [-13.3003,-6.7965] | DQ-F1 +0.1502 [+0.1243,+0.1757]
+    joint_vllm - tfidf_x1       F1 +0.0399 [+0.0228,+0.0571] | $ +0.1664 [-0.0041,+0.3343] | lat +5.0145 [+2.1160,+7.9388] | DQ-F1 +0.0249 [+0.0053,+0.0442]

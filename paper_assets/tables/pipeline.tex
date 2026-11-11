@@ -1,0 +1,17 @@
+\begin{tabular}{@{}lrrrrrrl@{}}
+\toprule
+Policy & F1$\uparrow$ & Cloud \$/1k$\downarrow$ & Mean (s)$\downarrow$ & p95 (s)$\downarrow$ & DQ-F1$\uparrow$ & E/C/R & Ours$-$X F1 [95\% CI]\\
+\midrule
+\multicolumn{8}{@{}l}{\textit{HotpotQA, 1,600 requests; D=0.722 s}}\\
+\textbf{Decider (Ours)} & 0.628 & 0.238 & \textbf{0.51} & \textbf{0.80} & \textbf{0.579} & 828/772/0 & ---\\
+AutoMix-style ($s=8$) & 0.619 & \textbf{0.212} & 1.36 & 1.83 & 0.000 & 896/704/0 & +0.009 [-0.004, +0.021]\\
+Qwen3.8 shared-prefix & \textbf{0.629} & 0.771 & 0.61 & 0.93 & 0.492 & 705/895/0 & -0.001 [-0.013, +0.011]\\
+Qwen3.8 zero-shot & 0.627 & 0.763 & 0.64 & 0.97 & 0.433 & 735/865/0 & +0.001 [-0.011, +0.012]\\
+\midrule
+\multicolumn{8}{@{}l}{\textit{MuSiQue, 400 requests; D=23.871 s}}\\
+\textbf{Decider (Ours)} & \textbf{0.494} & \textbf{2.013} & \textbf{8.12} & \textbf{34.82} & \textbf{0.478} & 0/164/236 & ---\\
+AutoMix-style ($s=8$) & 0.467 & 4.262 & 10.69 & 37.25 & 0.436 & 0/197/203 & +0.028 [+0.006, +0.051]\\
+Qwen3.8 shared-prefix & 0.456 & 3.163 & 9.33 & 35.03 & 0.425 & 0/139/261 & +0.038 [+0.010, +0.067]\\
+Qwen3.8 thinking & 0.446 & 5.454 & 19.03 & 53.15 & 0.394 & 0/198/202 & +0.048 [+0.023, +0.075]\\
+\bottomrule
+\end{tabular}

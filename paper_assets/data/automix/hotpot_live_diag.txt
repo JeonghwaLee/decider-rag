@@ -1,0 +1,18 @@
+runs/automix/hotpot_test6 | common questions 1600 | policies ['automix', 'big2e4_vllm', 'qwen38_shared', 'qwen38_zs'] | D = 0.722 s
+(1) DQ-F1 vs deadline: 0.6xD=0.43s 0.8xD=0.58s 1.0xD=0.72s 1.25xD=0.90s 1.5xD=1.08s 2.0xD=1.44s 2.5xD=1.80s 3.0xD=2.17s 4.0xD=2.89s 6.0xD=4.33s
+  automix          0.0000 0.0000 0.0002 0.0002 0.0367 0.4766 0.5907 0.6140 0.6190 0.6190 | F1 0.6190 wall mean 1.356 p50 1.298 p95 1.829
+  big2e4_vllm      0.2842 0.4758 0.5795 0.6179 0.6259 0.6275 0.6275 0.6281 0.6281 0.6281 | F1 0.6281 wall mean 0.505 p50 0.446 p95 0.799
+  qwen38_shared    0.0121 0.3346 0.4925 0.5946 0.6167 0.6284 0.6284 0.6284 0.6289 0.6289 | F1 0.6289 wall mean 0.615 p50 0.551 p95 0.934
+  qwen38_zs        0.0140 0.3291 0.4334 0.5805 0.6143 0.6271 0.6274 0.6274 0.6274 0.6274 | F1 0.6274 wall mean 0.636 p50 0.560 p95 0.974
+  big2e4_vllm - automix: +0.2842[+0.2632] +0.4758[+0.4534] +0.5793[+0.5576] +0.6177[+0.5965] +0.5892[+0.5672] +0.1509[+0.1320] +0.0368[+0.0231] +0.0141[+0.0013] +0.0091[-0.0036] +0.0091[-0.0036]
+  big2e4_vllm - qwen38_shared: +0.2721[+0.2513] +0.1412[+0.1216] +0.0870[+0.0696] +0.0233[+0.0094] +0.0092[-0.0037] -0.0009[-0.0128] -0.0009[-0.0128] -0.0003[-0.0121] -0.0008[-0.0125] -0.0008[-0.0125]
+  big2e4_vllm - qwen38_zs: +0.2702[+0.2497] +0.1468[+0.1277] +0.1461[+0.1273] +0.0374[+0.0232] +0.0116[-0.0010] +0.0004[-0.0111] +0.0001[-0.0114] +0.0007[-0.0107] +0.0007[-0.0107] +0.0007[-0.0107]
+(2) stage times, mean ms over requests that ran the stage (n):
+  big2e4_vllm      retrieve 99.0(n=1600) rerank 95.0(n=1600) prune 81.6(n=1600) decider 28.6(n=1600) edge 217.8(n=828) cloud 182.7(n=772)
+  automix          retrieve 98.2(n=1600) rerank 95.0(n=1600) prune 80.7(n=1600) edge 248.2(n=1600) verify 754.0(n=1600) cloud 182.0(n=704)
+(3) cascade (k=8): escalation rate 0.440 | verification output tokens/request 1780 | verification cloud $/1k 0.0000 | all-unparsable 0.000 (escalations from it 0.000)
+  accepted candidate with F1<0.5 (wrong accept) 0.174 | accepted with F1>=0.5 0.386 | escalated, candidate F1>=0.5 and no gain (discarded good) 0.141 | escalated with gain 0.150 | escalated, candidate F1<0.5, no gain 0.149
+(4) both keep                          n   554 (0.346) | F1 big2e4_vllm 0.7610 vs cascade 0.7610 | diff +0.0000 [+0.0000,+0.0000] | wall 0.509 vs 1.233
+(4) both escalate                      n   430 (0.269) | F1 big2e4_vllm 0.5578 vs cascade 0.5554 | diff +0.0023 [-0.0047,+0.0116] | wall 0.477 vs 1.506
+(4) Decider escalates, cascade keeps   n   342 (0.214) | F1 big2e4_vllm 0.6415 vs cascade 0.4967 | diff +0.1447 [+0.1065,+0.1834] | wall 0.491 vs 1.277
+(4) Decider keeps, cascade escalates   n   274 (0.171) | F1 big2e4_vllm 0.4532 vs cascade 0.5843 | diff -0.1311 [-0.1801,-0.0848] | wall 0.561 vs 1.469

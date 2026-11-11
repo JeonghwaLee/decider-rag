@@ -1,0 +1,14 @@
+musique_joint: n 150 | answer-bearing chunk present 0.36 | mean swapped 1.46
+  F1 E: orig 0.1968 swap 0.0758 diff -0.1210 [-0.1749,-0.0727]
+  F1 N: orig 0.3758 swap 0.1890 diff -0.1868 [-0.2483,-0.1302]
+  F1 T: orig 0.4998 swap 0.3305 diff -0.1693 [-0.2347,-0.1069]
+  dEN: true gain orig +0.1790 swap +0.1132 change -0.0658 [-0.1189,-0.0129] | decider orig +0.1718 swap +0.1828 change +0.0110 [-0.0016,+0.0242]
+    per-question change: corr(true change, decider change) pearson -0.213 [-0.424,+0.034] spearman -0.037 | level corr(decider, true gain): orig -0.078 swap +0.097
+      true gain fell (<0)    n  32 decider change mean +0.0357
+      unchanged (=0)         n 103 decider change mean +0.0052
+      true gain rose (>0)    n  15 decider change mean -0.0019
+  dNT: true gain orig +0.1239 swap +0.1415 change +0.0175 [-0.0461,+0.0793] | decider orig +0.1519 swap +0.1669 change +0.0151 [+0.0066,+0.0241]
+    per-question change: corr(true change, decider change) pearson +0.322 [+0.114,+0.497] spearman +0.152 | level corr(decider, true gain): orig +0.323 swap +0.041
+      true gain fell (<0)    n  18 decider change mean -0.0015
+      unchanged (=0)         n 106 decider change mean +0.0117
+      true gain rose (>0)    n  26 decider change mean +0.0402

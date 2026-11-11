@@ -1,0 +1,16 @@
+stream pilot9:musique:test n 800 | fam E/N/T fb N x1.0 budget $ 1.8019 | orders 5
+  decider      online F1 0.4599 $ 1.7917 (0.99x budget; per order 1.00 0.98 0.98 1.01 1.01) | fixed thr F1 0.4747 $ 2.0079 (1.11x)
+  qwen38_think online F1 0.4366 $ 1.7986 (1.00x budget; per order 0.98 0.98 0.98 1.02 1.03) | fixed thr F1 0.4417 $ 1.9000 (1.05x)
+  qwen38_shared online F1 0.4316 $ 1.7893 (0.99x budget; per order 0.97 1.00 0.97 0.98 1.03) | fixed thr F1 0.4463 $ 2.2147 (1.23x)
+  glm          online F1 0.4395 $ 1.8045 (1.00x budget; per order 1.00 1.02 0.99 1.00 1.00) | fixed thr F1 0.4460 $ 2.0288 (1.13x)
+  qwen3_4b     online F1 0.4319 $ 1.7930 (1.00x budget; per order 1.00 0.99 0.97 0.99 1.03) | fixed thr F1 0.4472 $ 2.1553 (1.20x)
+  qwen38_zs    online F1 0.4296 $ 1.8004 (1.00x budget; per order 0.99 1.03 0.98 0.99 1.01) | fixed thr F1 0.4488 $ 2.2211 (1.23x)
+  qwen38_fs    online F1 0.4310 $ 1.7849 (0.99x budget; per order 0.96 1.00 0.98 1.01 1.00) | fixed thr F1 0.4451 $ 2.1797 (1.21x)
+  tfidf        online F1 0.4434 $ 1.7997 (1.00x budget; per order 1.00 0.98 1.00 1.02 0.99) | fixed thr F1 0.4582 $ 1.8162 (1.01x)
+  decider - qwen38_think +0.0233 [+0.0100,+0.0369] | $ diff -0.0070
+  decider - qwen38_shared +0.0283 [+0.0156,+0.0415] | $ diff +0.0024
+  decider - glm          +0.0205 [+0.0065,+0.0346] | $ diff -0.0129
+  decider - qwen3_4b     +0.0280 [+0.0145,+0.0418] | $ diff -0.0014
+  decider - qwen38_zs    +0.0304 [+0.0174,+0.0436] | $ diff -0.0088
+  decider - qwen38_fs    +0.0290 [+0.0161,+0.0423] | $ diff +0.0067
+  decider - tfidf        +0.0166 [+0.0039,+0.0292] | $ diff -0.0081

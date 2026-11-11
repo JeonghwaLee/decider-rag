@@ -1,0 +1,11 @@
+stream pilot9:musique:test n 800 | val pilot9:musique:val n 400 | base $ 1.8019 | cand N | orders 5
+  verification: mean score val 0.366 test 0.384 | parsable samples/8 test 3.02 (0 parsable: 0.044) | cloud $ per 1k 1.2959 | mean sec 30.612 p95 35.215
+== x1.0 budget $ 1.8019
+  decider        online F1 0.4599 $ 1.7917 (0.99x) | fixed thr F1 0.4747 $ 2.0079 (1.11x)
+  qwen38_think   online F1 0.4366 $ 1.7986 (1.00x) | fixed thr F1 0.4417 $ 1.9000 (1.05x)
+  automix        online F1 0.3877 $ 1.7956 (1.00x) | fixed thr F1 0.3861 $ 1.7454 (0.97x) | val feasible | escalate iff score < 0.000 (rate 0.000)
+  automix diag: kept a candidate that escalation would improve 0.201 | escalated without gain 0.000 | escalated with gain 0.000 | escalated because all samples were unparsable 0.000 (all-unparsable 0.044)
+  automix cost split per 1k: N 0.4495 | verification 1.2959 | T on escalation 0.0000
+  decider - qwen38_think   +0.0233 [+0.0100,+0.0369] | $ diff -0.0070
+  decider - automix        +0.0723 [+0.0536,+0.0908] | $ diff -0.0039
+  cascade test curve (escalate iff score <= t): t=0.000:F1 0.4689 $ 3.7845 esc 0.57 t=0.125:F1 0.4689 $ 3.7845 esc 0.57 t=0.250:F1 0.4695 $ 3.8213 esc 0.58 t=0.375:F1 0.4670 $ 3.8429 esc 0.60 t=0.500:F1 0.4736 $ 3.9618 esc 0.64 t=0.625:F1 0.4736 $ 3.9618 esc 0.64 t=0.750:F1 0.4766 $ 4.0100 esc 0.66 t=0.875:F1 0.4766 $ 4.0100 esc 0.66 t=1.000:F1 0.4889 $ 4.7107 esc 1.00

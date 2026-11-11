@@ -1,0 +1,4 @@
+stream pilot10:2wiki:test n 800 | fam E/N/T fb N x1.0 budget $ 0.3065 | orders 5
+  joint3       online F1 0.5389 $ 0.3110 (1.01x budget; per order 1.00 1.03 0.99 0.99 1.06) | fixed thr F1 0.5215 $ 0.2026 (0.66x)
+  j3_qk        online F1 0.5512 $ 0.3015 (0.98x budget; per order 1.00 0.99 1.01 0.98 0.95) | fixed thr F1 0.5564 $ 0.3302 (1.08x)
+  joint3 - j3_qk        -0.0124 [-0.0283,+0.0037] | $ diff +0.0095

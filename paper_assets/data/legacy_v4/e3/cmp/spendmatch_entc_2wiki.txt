@@ -1,0 +1,4 @@
+pilot10:2wiki:test n 800 | base $ 0.3065 | x1: ENT F1 0.5389 $ 0.3110 (1.015x) ; ENTC F1 0.5512 $ 0.3169 (1.034x)
+  x1 (unmatched) ENTC - ENT +0.0124 [+0.0027,+0.0223]
+  matched: ENTC at m=0.97 F1 0.5485 $ 0.3110 (target 0.3110) | ENTC - ENT +0.0097 [-0.0002,+0.0198]
+  matched: ENT at m=1.025 F1 0.5396 $ 0.3191 (target 0.3169) | ENTC - ENT +0.0116 [+0.0011,+0.0223]

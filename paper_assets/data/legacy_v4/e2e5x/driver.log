@@ -1,0 +1,4 @@
+2026-11-08T15:09:38Z servers cloud PID 1904721 :8193 GPU4, edge PID 1904722 :8195 GPU7, decider PID 1904723 :8197 GPU6
+2026-11-08T15:09:38Z start hotpot test6 pools 04-07
+2026-11-08T16:16:34Z hotpot test6 pools 04-07 rc=0
+2026-11-08T16:17:32Z stopped servers PIDs 1904721 (:8193) 1904722 (:8195) 1904723 (:8197) after extension

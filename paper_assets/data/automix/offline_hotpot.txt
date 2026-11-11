@@ -1,0 +1,55 @@
+stream pilot8:hotpotqa:test4+pilot8:hotpotqa:test5+pilot8:hotpotqa:test6 n 3200 | val legacy:val n 400 | base $ 0.1852 | cand E | orders 5
+  verification: mean score val 0.793 test 0.735 | parsable samples/8 test 7.64 (0 parsable: 0.000) | cloud $ per 1k 2.5877 | mean sec 4.120 p95 4.407
+== x0.5 budget $ 0.0926
+  decider        online F1 0.5917 $ 0.0954 (1.03x) | fixed thr F1 0.6061 $ 0.1231 (1.33x)
+  qwen38_zs      online F1 0.5864 $ 0.0947 (1.02x) | fixed thr F1 0.5913 $ 0.1039 (1.12x)
+  qwen38_shared  online F1 0.5859 $ 0.0959 (1.04x) | fixed thr F1 0.5994 $ 0.1155 (1.25x)
+  glm            online F1 0.5811 $ 0.0968 (1.05x) | fixed thr F1 0.5914 $ 0.0986 (1.07x)
+  qwen38_think   online F1 0.5868 $ 0.0955 (1.03x) | fixed thr F1 0.6018 $ 0.1284 (1.39x)
+  automix        online F1 0.5934 $ 0.0939 (1.01x) | fixed thr F1 0.6226 $ 0.1431 (1.55x) | val feasible | escalate iff score < 0.750 (rate 0.312)
+  automix diag: kept a candidate that escalation would improve 0.125 | escalated without gain 0.191 | escalated with gain 0.120
+  decider - qwen38_zs      +0.0053 [-0.0008,+0.0113] | $ diff +0.0008
+  decider - qwen38_shared  +0.0058 [-0.0004,+0.0118] | $ diff -0.0005
+  decider - glm            +0.0106 [+0.0051,+0.0161] | $ diff -0.0014
+  decider - qwen38_think   +0.0049 [-0.0009,+0.0107] | $ diff -0.0001
+  decider - automix        -0.0017 [-0.0081,+0.0048] | $ diff +0.0016
+== x0.75 budget $ 0.1389
+  decider        online F1 0.6087 $ 0.1398 (1.01x) | fixed thr F1 0.6303 $ 0.1816 (1.31x)
+  qwen38_zs      online F1 0.6001 $ 0.1404 (1.01x) | fixed thr F1 0.6252 $ 0.1882 (1.35x)
+  qwen38_shared  online F1 0.5998 $ 0.1396 (1.01x) | fixed thr F1 0.6163 $ 0.1763 (1.27x)
+  glm            online F1 0.5968 $ 0.1393 (1.00x) | fixed thr F1 0.6109 $ 0.1727 (1.24x)
+  qwen38_think   online F1 0.5977 $ 0.1398 (1.01x) | fixed thr F1 0.6079 $ 0.1725 (1.24x)
+  automix        online F1 0.6137 $ 0.1392 (1.00x) | fixed thr F1 0.6371 $ 0.2031 (1.46x) | val feasible | escalate iff score < 1.000 (rate 0.430)
+  automix diag: kept a candidate that escalation would improve 0.096 | escalated without gain 0.280 | escalated with gain 0.150
+  decider - qwen38_zs      +0.0086 [+0.0025,+0.0147] | $ diff -0.0006
+  decider - qwen38_shared  +0.0089 [+0.0024,+0.0152] | $ diff +0.0002
+  decider - glm            +0.0119 [+0.0056,+0.0180] | $ diff +0.0005
+  decider - qwen38_think   +0.0110 [+0.0047,+0.0171] | $ diff +0.0001
+  decider - automix        -0.0050 [-0.0125,+0.0024] | $ diff +0.0006
+== x1.0 budget $ 0.1852
+  decider        online F1 0.6248 $ 0.1855 (1.00x) | fixed thr F1 0.6426 $ 0.2185 (1.18x)
+  qwen38_zs      online F1 0.6172 $ 0.1854 (1.00x) | fixed thr F1 0.6400 $ 0.2262 (1.22x)
+  qwen38_shared  online F1 0.6144 $ 0.1854 (1.00x) | fixed thr F1 0.6383 $ 0.2407 (1.30x)
+  glm            online F1 0.6098 $ 0.1849 (1.00x) | fixed thr F1 0.6255 $ 0.2292 (1.24x)
+  qwen38_think   online F1 0.6110 $ 0.1856 (1.00x) | fixed thr F1 0.6203 $ 0.2155 (1.16x)
+  automix        online F1 0.6291 $ 0.1840 (0.99x) | fixed thr F1 0.6371 $ 0.2031 (1.10x) | val feasible | escalate iff score < 1.000 (rate 0.430)
+  automix diag: kept a candidate that escalation would improve 0.096 | escalated without gain 0.280 | escalated with gain 0.150
+  decider - qwen38_zs      +0.0076 [+0.0011,+0.0138] | $ diff +0.0001
+  decider - qwen38_shared  +0.0104 [+0.0043,+0.0164] | $ diff +0.0002
+  decider - glm            +0.0150 [+0.0088,+0.0209] | $ diff +0.0006
+  decider - qwen38_think   +0.0138 [+0.0073,+0.0203] | $ diff -0.0000
+  decider - automix        -0.0043 [-0.0119,+0.0032] | $ diff +0.0015
+== x1.5 budget $ 0.2778
+  decider        online F1 0.6493 $ 0.2776 (1.00x) | fixed thr F1 0.6656 $ 0.3454 (1.24x)
+  qwen38_zs      online F1 0.6412 $ 0.2763 (0.99x) | fixed thr F1 0.6600 $ 0.3422 (1.23x)
+  qwen38_shared  online F1 0.6413 $ 0.2770 (1.00x) | fixed thr F1 0.6609 $ 0.3364 (1.21x)
+  glm            online F1 0.6345 $ 0.2762 (0.99x) | fixed thr F1 0.6515 $ 0.3282 (1.18x)
+  qwen38_think   online F1 0.6349 $ 0.2771 (1.00x) | fixed thr F1 0.6408 $ 0.2994 (1.08x)
+  automix        online F1 0.6452 $ 0.2711 (0.98x) | fixed thr F1 0.6371 $ 0.2031 (0.73x) | val feasible | escalate iff score < 1.000 (rate 0.430)
+  automix diag: kept a candidate that escalation would improve 0.096 | escalated without gain 0.280 | escalated with gain 0.150
+  decider - qwen38_zs      +0.0080 [+0.0021,+0.0137] | $ diff +0.0013
+  decider - qwen38_shared  +0.0079 [+0.0022,+0.0135] | $ diff +0.0005
+  decider - glm            +0.0147 [+0.0087,+0.0205] | $ diff +0.0014
+  decider - qwen38_think   +0.0144 [+0.0081,+0.0207] | $ diff +0.0004
+  decider - automix        +0.0041 [-0.0022,+0.0104] | $ diff +0.0064
+  cascade test curve (escalate iff score <= t): t=0.000:F1 0.5868 $ 0.0585 esc 0.13 t=0.125:F1 0.5956 $ 0.0720 esc 0.16 t=0.250:F1 0.6092 $ 0.0923 esc 0.20 t=0.375:F1 0.6159 $ 0.1062 esc 0.23 t=0.500:F1 0.6183 $ 0.1219 esc 0.27 t=0.625:F1 0.6213 $ 0.1375 esc 0.30 t=0.750:F1 0.6263 $ 0.1605 esc 0.35 t=0.875:F1 0.6371 $ 0.2031 esc 0.43 t=1.000:F1 0.6801 $ 0.4973 esc 1.00

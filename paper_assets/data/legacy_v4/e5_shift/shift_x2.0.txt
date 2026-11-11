@@ -1,0 +1,27 @@
+val legacy:val+pilot9:musique:val+pilot10:2wiki:val n 1200 | test pilot8:hotpotqa:test4+pilot9:musique:test+pilot10:2wiki:test n 2400 | budget x2.0 $ 1.5300 | per-dataset all-N $ 0.481 0.449 0.373
+  decider        segment F1 0.6363 $ 0.85x | per segment $/bud 0.74 1.01 0.82 | F1 0.760 0.427 0.722 | shift H->M, M->W: first-W $/bud 1.58, 0.77 ; max roll $/bud 1.65, 1.05 ; requests until roll <= 1.1x [131, 146, 119, 158, 133], [0, 0, 0, 0, 0]
+  decider        mixed   F1 0.6434 $ 0.98x | per segment $/bud 0.63 1.54 0.76 | F1 0.748 0.479 0.703
+  qwen38_zs      segment F1 0.6252 $ 0.86x | per segment $/bud 0.74 1.00 0.82 | F1 0.758 0.397 0.720 | shift H->M, M->W: first-W $/bud 1.55, 0.73 ; max roll $/bud 1.77, 1.10 ; requests until roll <= 1.1x [126, 140, 111, 160, 120], [77, 0, 0, 0, 0]
+  qwen38_zs      mixed   F1 0.6193 $ 0.98x | per segment $/bud 0.58 1.78 0.58 | F1 0.737 0.471 0.650
+  qwen38_shared  segment F1 0.6262 $ 0.85x | per segment $/bud 0.73 1.00 0.83 | F1 0.757 0.401 0.720 | shift H->M, M->W: first-W $/bud 1.57, 0.74 ; max roll $/bud 1.79, 1.09 ; requests until roll <= 1.1x [127, 139, 108, 158, 128], [74, 0, 0, 0, 0]
+  qwen38_shared  mixed   F1 0.6275 $ 0.98x | per segment $/bud 0.56 1.70 0.67 | F1 0.733 0.463 0.686
+  glm            segment F1 0.6265 $ 0.86x | per segment $/bud 0.75 1.00 0.83 | F1 0.759 0.398 0.722 | shift H->M, M->W: first-W $/bud 1.61, 0.77 ; max roll $/bud 1.79, 1.06 ; requests until roll <= 1.1x [134, 141, 114, 155, 120], [0, 0, 0, 0, 0]
+  glm            mixed   F1 0.6401 $ 0.98x | per segment $/bud 0.71 1.45 0.79 | F1 0.752 0.456 0.713
+  qwen3_4b       segment F1 0.6243 $ 0.85x | per segment $/bud 0.72 1.01 0.81 | F1 0.753 0.403 0.717 | shift H->M, M->W: first-W $/bud 1.66, 0.70 ; max roll $/bud 1.75, 1.07 ; requests until roll <= 1.1x [134, 143, 114, 160, 136], [75, 0, 0, 0, 0]
+  qwen3_4b       mixed   F1 0.6287 $ 0.97x | per segment $/bud 0.63 1.60 0.70 | F1 0.731 0.460 0.695
+  qwen38_fs      segment F1 0.6255 $ 0.85x | per segment $/bud 0.74 1.00 0.82 | F1 0.757 0.398 0.721 | shift H->M, M->W: first-W $/bud 1.55, 0.73 ; max roll $/bud 1.79, 1.10 ; requests until roll <= 1.1x [126, 139, 109, 158, 116], [74, 0, 0, 0, 0]
+  qwen38_fs      mixed   F1 0.6277 $ 0.97x | per segment $/bud 0.56 1.70 0.66 | F1 0.734 0.467 0.683
+  qwen38_think   segment F1 0.6311 $ 0.85x | per segment $/bud 0.73 0.99 0.83 | F1 0.758 0.412 0.723 | shift H->M, M->W: first-W $/bud 1.54, 0.80 ; max roll $/bud 1.73, 1.06 ; requests until roll <= 1.1x [126, 139, 112, 141, 123], [0, 0, 0, 0, 0]
+  qwen38_think   mixed   F1 0.6268 $ 0.98x | per segment $/bud 0.57 1.66 0.71 | F1 0.731 0.462 0.687
+  segment decider - qwen38_zs      +0.0112 [+0.0065,+0.0158]
+  segment decider - qwen38_shared  +0.0101 [+0.0054,+0.0146]
+  segment decider - glm            +0.0098 [+0.0051,+0.0148]
+  segment decider - qwen3_4b       +0.0120 [+0.0068,+0.0173]
+  segment decider - qwen38_fs      +0.0108 [+0.0062,+0.0153]
+  segment decider - qwen38_think   +0.0052 [+0.0007,+0.0096]
+  mixed   decider - qwen38_zs      +0.0241 [+0.0184,+0.0298]
+  mixed   decider - qwen38_shared  +0.0160 [+0.0109,+0.0210]
+  mixed   decider - glm            +0.0033 [-0.0013,+0.0078]
+  mixed   decider - qwen3_4b       +0.0147 [+0.0093,+0.0204]
+  mixed   decider - qwen38_fs      +0.0157 [+0.0109,+0.0206]
+  mixed   decider - qwen38_think   +0.0166 [+0.0117,+0.0216]

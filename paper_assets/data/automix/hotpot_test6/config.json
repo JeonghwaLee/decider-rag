@@ -1,0 +1,61 @@
+{
+ "args": {
+  "ds": "hotpotqa",
+  "runs": [
+   "test6/pool_00",
+   "test6/pool_01",
+   "test6/pool_02",
+   "test6/pool_03",
+   "test6/pool_04",
+   "test6/pool_05",
+   "test6/pool_06",
+   "test6/pool_07"
+  ],
+  "pol": [
+   "big2e4_vllm=vdec:8197:dec-big2e4:runs/llmsel/vllm_dec_big2e4:0.18889160156250004:inf",
+   "automix=automix:E:0.9375",
+   "qwen38_zs=llm:zs:edge:0.03925910589224437:inf",
+   "qwen38_shared=llm:shared:edge:0.2099067296540139:inf"
+  ],
+  "fallback": "E",
+  "opt": false,
+  "tfidf_train": null,
+  "idx": "runs/pilot8/trace/_index",
+  "trace": "runs/pilot8/trace/hotpotqa",
+  "out": "runs/automix/hotpot_test6",
+  "limit": 0,
+  "block": 25,
+  "cloud_port": 8193,
+  "edge_port": 8195
+ },
+ "policies": {
+  "big2e4_vllm": [
+   "vdec",
+   "8197",
+   "dec-big2e4",
+   "runs/llmsel/vllm_dec_big2e4",
+   "0.18889160156250004",
+   "inf"
+  ],
+  "automix": [
+   "automix",
+   "E",
+   "0.9375"
+  ],
+  "qwen38_zs": [
+   "llm",
+   "zs",
+   "edge",
+   "0.03925910589224437",
+   "inf"
+  ],
+  "qwen38_shared": [
+   "llm",
+   "shared",
+   "edge",
+   "0.2099067296540139",
+   "inf"
+  ]
+ },
+ "version": "e2e_ent6"
+}

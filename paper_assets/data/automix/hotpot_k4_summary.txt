@@ -1,0 +1,10 @@
+runs/automix/hotpot_k4 | common questions 1600 | deadline D = p90 wall of ruleN_tuned on runs/e2e4/hotpot_calib = 0.722 s | cached input price 0.1 x
+  automix_k4     stage ms (mean over requests that ran the stage): retrieve 99.5 rerank 95.7 prune 83.1 edge 248.6 verify 725.1 cloud 175.2(n=626)
+  automix_k4     E/N/T 974/626/0 | F1 0.6133 | $ answer 0.1855 + selector 0.0000 = 0.1855 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.1855 | wall mean 1.321 p50 1.260 p95 1.794 | DQ-F1 0.0013 (met 0.003)
+  big2e4_vllm    stage ms (mean over requests that ran the stage): retrieve 99.3 rerank 95.6 prune 83.4 decider 28.3 edge 218.0(n=828) cloud 176.8(n=772)
+  big2e4_vllm    E/N/T 828/772/0 | F1 0.6281 | $ answer 0.2385 + selector 0.0000 = 0.2385 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.2385 | wall mean 0.505 p50 0.448 p95 0.803 | DQ-F1 0.5822 (met 0.912)
+  big2e4_vllm - automix_k4     F1 +0.0148 [+0.0012,+0.0281] | total $ +0.0529 [+0.0353,+0.0706] (w/ cache +0.0529) | wall -0.816 [-0.825,-0.807] | DQ-F1 +0.5810 [+0.5591,+0.6030]
+  DQ-F1 vs deadline (x D): 0.6x=0.433s 0.7x=0.505s 0.8x=0.578s 0.9x=0.650s 1.0x=0.722s 1.1x=0.794s 1.25x=0.902s 1.5x=1.083s 2.0x=1.444s
+    automix_k4     0.0000 0.0000 0.0006 0.0013 0.0013 0.0013 0.0025 0.0630 0.4983
+    big2e4_vllm    0.2835 0.3899 0.4801 0.5467 0.5822 0.6044 0.6179 0.6271 0.6281
+    big2e4_vllm - automix_k4     +0.2835[+0.2627] +0.3899[+0.3679] +0.4795[+0.4566] +0.5454[+0.5234] +0.5810[+0.5591] +0.6032[+0.5817] +0.6154[+0.5940] +0.5641[+0.5422] +0.1298[+0.1113]

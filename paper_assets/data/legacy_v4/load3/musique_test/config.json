@@ -1,0 +1,69 @@
+{
+ "args": {
+  "ds": "musique",
+  "runs": [
+   "test/pool_00",
+   "test/pool_01"
+  ],
+  "pol": [
+   "joint_vllm=vdec:8398:dec-joint:runs/llmsel/vllm_dec_joint:-inf:0.14118652343750002",
+   "qwen38_think=llm:think:edge+think:-inf:0.999992110754487",
+   "qwen38_shared=llm:shared:edge+think:-inf:0.8531177699259935",
+   "tfidf_x1=tfidf:-0.08841117431659404:0.0586937229650144",
+   "ruleT_tuned=ruleT_tuned:0.65:0.1354492187500007"
+  ],
+  "fallback": "N",
+  "tfidf_train": "pilot9:musique:train",
+  "idx": "runs/pilot9/trace/_index",
+  "rates": [
+   0.453,
+   1.21,
+   1.81
+  ],
+  "seeds": [
+   1,
+   2
+  ],
+  "workers": 4,
+  "burst": 0,
+  "limit": 0,
+  "cloud": "http://127.0.0.1:8393/v1",
+  "edge": "http://127.0.0.1:8395/v1",
+  "out": "runs/load3/musique_test"
+ },
+ "policies": {
+  "joint_vllm": [
+   "vdec",
+   "8398",
+   "dec-joint",
+   "runs/llmsel/vllm_dec_joint",
+   "-inf",
+   "0.14118652343750002"
+  ],
+  "qwen38_think": [
+   "llm",
+   "think",
+   "edge+think",
+   "-inf",
+   "0.999992110754487"
+  ],
+  "qwen38_shared": [
+   "llm",
+   "shared",
+   "edge+think",
+   "-inf",
+   "0.8531177699259935"
+  ],
+  "tfidf_x1": [
+   "tfidf",
+   "-0.08841117431659404",
+   "0.0586937229650144"
+  ],
+  "ruleT_tuned": [
+   "ruleT_tuned",
+   "0.65",
+   "0.1354492187500007"
+  ]
+ },
+ "version": "load_ent3"
+}

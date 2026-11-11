@@ -1,0 +1,10 @@
+stream pilot9:musique:test n 800 | fam E/N/T fb N x1.0 budget $ 1.8019 | orders 5
+  joint3       online F1 0.4590 $ 1.7909 (0.99x budget; per order 0.97 0.98 0.98 1.03 1.01) | fixed thr F1 0.4833 $ 2.1327 (1.18x)
+  j3_entc      online F1 0.4575 $ 1.7984 (1.00x budget; per order 0.99 0.99 0.99 1.03 0.98) | fixed thr F1 0.4700 $ 2.1492 (1.19x)
+  j3_emb_ridge online F1 0.4439 $ 1.8072 (1.00x budget; per order 1.00 1.01 0.99 1.01 1.01) | fixed thr F1 0.4402 $ 1.7180 (0.95x)
+  j3_emb_mlp   online F1 0.4490 $ 1.8309 (1.02x budget; per order 1.02 1.02 1.00 1.02 1.02) | fixed thr F1 0.4399 $ 1.5544 (0.86x)
+  tfidf        online F1 0.4434 $ 1.7997 (1.00x budget; per order 1.00 0.98 1.00 1.02 0.99) | fixed thr F1 0.4582 $ 1.8162 (1.01x)
+  joint3 - j3_entc      +0.0015 [-0.0051,+0.0082] | $ diff -0.0075
+  joint3 - j3_emb_ridge +0.0151 [+0.0064,+0.0239] | $ diff -0.0163
+  joint3 - j3_emb_mlp   +0.0100 [+0.0000,+0.0201] | $ diff -0.0400
+  joint3 - tfidf        +0.0156 [+0.0047,+0.0267] | $ diff -0.0088

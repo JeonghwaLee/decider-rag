@@ -1,0 +1,9 @@
+{
+ "thr": 1e-06,
+ "rule": "x1 INFEASIBLE on val; max IBC lift (+0.223) at t=0.000",
+ "val_f1": 0.518799161622691,
+ "val_cost": 4.11655635,
+ "budget_x1": 1.8019162750000002,
+ "val_esc_rate": 0.525,
+ "feasible_x1": false
+}

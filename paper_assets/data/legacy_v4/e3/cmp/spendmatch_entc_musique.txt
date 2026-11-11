@@ -1,0 +1,4 @@
+pilot9:musique:test n 800 | base $ 1.8019 | x1: ENT F1 0.4590 $ 1.7909 (0.994x) ; ENTC F1 0.4575 $ 1.7984 (0.998x)
+  x1 (unmatched) ENTC - ENT -0.0015 [-0.0082,+0.0051]
+  matched: ENTC at m=0.995 F1 0.4577 $ 1.7899 (target 1.7909) | ENTC - ENT -0.0013 [-0.0084,+0.0056]
+  matched: ENT at m=1.01 F1 0.4549 $ 1.8142 (target 1.7984) | ENTC - ENT +0.0026 [-0.0052,+0.0104]

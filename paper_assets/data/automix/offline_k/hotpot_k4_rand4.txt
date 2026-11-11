@@ -1,0 +1,10 @@
+stream pilot8:hotpotqa:test4+pilot8:hotpotqa:test5+pilot8:hotpotqa:test6 n 3200 | val legacy:val n 400 | base $ 0.1852 | cand E | orders 5
+  verification: mean score val 0.799 test 0.733 | parsable samples/8 test 3.82 (0 parsable: 0.001) | cloud $ per 1k 1.6157 | mean sec 4.120 p95 4.407
+== x1.0 budget $ 0.1852
+  decider        online F1 0.6248 $ 0.1855 (1.00x) | fixed thr F1 0.6426 $ 0.2185 (1.18x)
+  qwen38_zs      online F1 0.6172 $ 0.1854 (1.00x) | fixed thr F1 0.6400 $ 0.2262 (1.22x)
+  automix        online F1 0.6257 $ 0.1836 (0.99x) | fixed thr F1 0.6317 $ 0.1799 (0.97x) | val feasible | escalate iff score < 1.000 (rate 0.381)
+  automix diag: kept a candidate that escalation would improve 0.106 | escalated without gain 0.242 | escalated with gain 0.139 | escalated because all samples were unparsable 0.001 (all-unparsable 0.001)
+  decider - qwen38_zs      +0.0076 [+0.0011,+0.0138] | $ diff +0.0001
+  decider - automix        -0.0009 [-0.0082,+0.0062] | $ diff +0.0019
+  cascade test curve (escalate iff score <= t): t=0.000:F1 0.5969 $ 0.0759 esc 0.16 t=0.125:F1 0.5969 $ 0.0759 esc 0.16 t=0.250:F1 0.6079 $ 0.0974 esc 0.21 t=0.375:F1 0.6123 $ 0.1057 esc 0.23 t=0.500:F1 0.6191 $ 0.1334 esc 0.29 t=0.625:F1 0.6191 $ 0.1334 esc 0.29 t=0.750:F1 0.6317 $ 0.1799 esc 0.38 t=0.875:F1 0.6317 $ 0.1799 esc 0.38 t=1.000:F1 0.6801 $ 0.4973 esc 1.00

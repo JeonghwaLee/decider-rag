@@ -1,0 +1,45 @@
+{
+  "test": "pilot9:musique:test",
+  "n": 800,
+  "primary_sha256": "18f03c6282ff3469e86502c52e94c9014a4957e57c9b18e659df050801b53bdf",
+  "budget": 1.8019162750000002,
+  "metrics": {
+    "pre": {
+      "fixed_f1": 0.4746730662296874,
+      "fixed_cost": 2.007879775,
+      "online_f1": 0.4647470832990181,
+      "online_cost": 1.793438705,
+      "online_budget_ratio": 0.9952952475552727
+    },
+    "post": {
+      "fixed_f1": 0.45800785504018593,
+      "fixed_cost": 1.8739591125000001,
+      "online_f1": 0.45228743267602695,
+      "online_cost": 1.8191849150000001,
+      "online_budget_ratio": 1.0095834863359563
+    }
+  },
+  "post_minus_pre": {
+    "fixed_f1": [
+      -0.01666521118950142,
+      -0.03174399633803689,
+      -0.0015244927172317966
+    ],
+    "fixed_cost": [
+      -0.13392066250000004,
+      -0.29652373937500004,
+      0.02675733749999998
+    ],
+    "online_f1": [
+      -0.012459650622991108,
+      -0.02387348576983179,
+      -0.0012345056827451563
+    ],
+    "online_cost": [
+      0.025746209999999995,
+      -0.08873439887500001,
+      0.13951968825
+    ]
+  },
+  "note": "Offline replay on reused questions. Cloud-token cost includes compulsory C candidate and R, with reuse after truncation. Online means past-only budget replay, not live latency. Report realized spend ratios; do not declare exact equal-spend if ratios differ materially."
+}

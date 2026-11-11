@@ -1,0 +1,9 @@
+runs/load3/hotpot_place | deadline D 0.722 s | ref big2e4_sep | F1/$: question-level bootstrap of seed-averaged differences | lat/DQ-F1: per-seed + moving-block bootstrap (block 50; sensitivity 100)
+== rate 6.4/s | seeds [1, 2]
+  big2e4_sep     s1: F1 0.6389 p95  1.12 DQ-F1 0.4218 thr 6.05/s | s2: F1 0.6419 p95  1.26 DQ-F1 0.3472 thr 6.57/s
+  big2e4_shared  s1: F1 0.6326 p95  1.36 DQ-F1 0.3288 thr 6.05/s | s2: F1 0.6377 p95  1.57 DQ-F1 0.2712 thr 6.58/s
+    big2e4_sep - big2e4_shared  F1 +0.0052 [+0.0009,+0.0101] (nq 800) | $ -0.0000 [-0.0000,+0.0000] (nq 800) | lat -0.1231 [-0.1559,-0.0941] (b100 [-0.1580,-0.0918]; per seed -0.1088 -0.1373) | DQ-F1 +0.0845 [+0.0644,+0.1071] (b100 [+0.0642,+0.1058]; per seed +0.0929 +0.0760)
+== rate 9.6/s | seeds [1, 2]
+  big2e4_sep     s1: F1 0.6403 p95  3.23 DQ-F1 0.0833 thr 9.06/s | s2: F1 0.6391 p95  4.41 DQ-F1 0.0027 thr 9.32/s
+  big2e4_shared  s1: F1 0.6335 p95  8.71 DQ-F1 0.0122 thr 8.40/s | s2: F1 0.6409 p95 12.85 DQ-F1 0.0020 thr 8.41/s
+    big2e4_sep - big2e4_shared  F1 +0.0025 [-0.0019,+0.0072] (nq 800) | $ -0.0000 [-0.0000,+0.0000] (nq 800) | lat -4.0489 [-4.8081,-3.2708] (b100 [-5.0466,-3.0053]; per seed -3.6681 -4.4297) | DQ-F1 +0.0359 [+0.0118,+0.0674] (b100 [+0.0091,+0.0698]; per seed +0.0711 +0.0007)

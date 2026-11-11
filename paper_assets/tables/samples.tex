@@ -1,0 +1,10 @@
+\begin{tabular}{@{}llrrrrrl@{}}
+\toprule
+Workload & Policy & F1$\uparrow$ & Cloud \$/1k$\downarrow$ & Mean (s)$\downarrow$ & Verify (ms)$\downarrow$ & DQ-F1$\uparrow$ & Ours$-$X F1 [95\% CI]\\
+\midrule
+HotpotQA & \textbf{Decider (Ours)} & \textbf{0.628} & 0.238 & \textbf{0.50} & --- & \textbf{0.582} & ---\\
+HotpotQA & AutoMix-style ($s=4$) & 0.613 & \textbf{0.186} & 1.32 & 725 & 0.001 & +0.015 [+0.001, +0.028]\\
+MuSiQue & \textbf{Decider (Ours)} & \textbf{0.498} & 2.031 & 8.16 & --- & \textbf{0.476} & ---\\
+MuSiQue & AutoMix-style ($s=1$) & 0.388 & \textbf{1.248} & \textbf{1.52} & 1052 & 0.388 & +0.110 [+0.081, +0.141]\\
+\bottomrule
+\end{tabular}

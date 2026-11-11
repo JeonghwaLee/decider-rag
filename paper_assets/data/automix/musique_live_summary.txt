@@ -1,0 +1,20 @@
+runs/automix/musique_k8_merged | common questions 400 | deadline D = p90 wall of ruleT_tuned on runs/e2e4/musique_calib = 23.871 s | cached input price 0.1 x
+  automix        stage ms (mean over requests that ran the stage): retrieve 124.4 rerank 100.3 prune 83.5 cloud 179.6 verify 2025.6 cloud_T 16103.8(n=203)
+  automix        E/N/T 0/197/203 | F1 0.4667 | $ answer 4.2621 + selector 0.0000 = 4.2621 | cache hits sel 0 ans 12787 tok (sel prompt 0) -> total $ w/ cache 1.1549 | wall mean 10.686 p50 3.243 p95 37.246 | DQ-F1 0.4359 (met 0.812)
+  joint_vllm     stage ms (mean over requests that ran the stage): retrieve 121.0 rerank 99.8 prune 87.3 decider 31.0 cloud 7760.9 cloud_retry 161.8(n=51)
+  joint_vllm     E/N/T 0/164/236 | F1 0.4945 | $ answer 2.0128 + selector 0.0000 = 2.0128 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 2.0128 | wall mean 8.121 p50 1.785 p95 34.819 | DQ-F1 0.4780 (met 0.845)
+  qwen38_shared  stage ms (mean over requests that ran the stage): retrieve 122.4 rerank 104.7 prune 77.4 selector 236.7 cloud 8767.6 cloud_retry 150.3(n=53)
+  qwen38_shared  E/N/T 0/139/261 | F1 0.4564 | $ answer 2.2270 + selector 0.9362 = 3.1632 | cache hits sel 690 ans 274 tok (sel prompt 3459) -> total $ w/ cache 2.9288 | wall mean 9.329 p50 2.580 p95 35.033 | DQ-F1 0.4251 (met 0.820)
+  qwen38_think   stage ms (mean over requests that ran the stage): retrieve 131.7 rerank 101.5 prune 81.3 selector 11523.7 cloud 7176.8 cloud_retry 164.5(n=45)
+  qwen38_think   E/N/T 0/198/202 | F1 0.4461 | $ answer 1.8902 + selector 3.5633 = 5.4535 | cache hits sel 827 ans 0 tok (sel prompt 3555) -> total $ w/ cache 5.2525 | wall mean 19.034 p50 15.998 p95 53.154 | DQ-F1 0.3936 (met 0.738)
+  joint_vllm - automix        F1 +0.0278 [+0.0057,+0.0507] | total $ -2.2494 [-2.4914,-2.0105] (w/ cache +0.8579) | wall -2.565 [-3.635,-1.489] | DQ-F1 +0.0421 [+0.0203,+0.0659]
+  joint_vllm - qwen38_shared  F1 +0.0380 [+0.0098,+0.0670] | total $ -1.1504 [-1.4272,-0.8706] (w/ cache -0.9160) | wall -1.208 [-2.484,+0.055] | DQ-F1 +0.0529 [+0.0249,+0.0826]
+  joint_vllm - qwen38_think   F1 +0.0484 [+0.0230,+0.0749] | total $ -3.4407 [-3.7159,-3.1578] (w/ cache -3.2398) | wall -10.913 [-12.171,-9.627] | DQ-F1 +0.0844 [+0.0547,+0.1142]
+  DQ-F1 vs deadline (x D): 0.6x=14.323s 0.7x=16.710s 0.8x=19.097s 0.9x=21.484s 1.0x=23.871s 1.1x=26.259s 1.25x=29.839s 1.5x=35.807s 2.0x=47.743s
+    automix        0.4239 0.4276 0.4301 0.4351 0.4359 0.4384 0.4409 0.4456 0.4667
+    joint_vllm     0.4612 0.4699 0.4741 0.4753 0.4780 0.4805 0.4838 0.4945 0.4945
+    qwen38_shared  0.3981 0.4088 0.4113 0.4183 0.4251 0.4251 0.4263 0.4564 0.4564
+    qwen38_think   0.2617 0.2980 0.3119 0.3660 0.3936 0.4049 0.4128 0.4266 0.4331
+    joint_vllm - automix        +0.0373[+0.0150] +0.0423[+0.0201] +0.0439[+0.0216] +0.0402[+0.0183] +0.0421[+0.0203] +0.0421[+0.0199] +0.0429[+0.0198] +0.0488[+0.0250] +0.0278[+0.0057]
+    joint_vllm - qwen38_shared  +0.0631[+0.0327] +0.0611[+0.0310] +0.0628[+0.0333] +0.0570[+0.0288] +0.0529[+0.0249] +0.0554[+0.0268] +0.0575[+0.0289] +0.0380[+0.0098] +0.0380[+0.0098]
+    joint_vllm - qwen38_think   +0.1995[+0.1627] +0.1719[+0.1358] +0.1622[+0.1261] +0.1093[+0.0784] +0.0844[+0.0547] +0.0756[+0.0470] +0.0710[+0.0428] +0.0679[+0.0407] +0.0613[+0.0343]

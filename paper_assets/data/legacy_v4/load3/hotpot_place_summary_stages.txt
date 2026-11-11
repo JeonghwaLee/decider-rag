@@ -1,0 +1,8 @@
+rate 6.4 seed 1 big2e4_sep      n 800 err 0 | lat 0.675 wait 0.033 local 0.361 sel_ms 31.9 gen 0.248
+rate 6.4 seed 2 big2e4_sep      n 800 err 0 | lat 0.745 wait 0.068 local 0.381 sel_ms 33.4 gen 0.263
+rate 6.4 seed 1 big2e4_shared   n 800 err 0 | lat 0.783 wait 0.079 local 0.419 sel_ms 44.3 gen 0.241
+rate 6.4 seed 2 big2e4_shared   n 800 err 0 | lat 0.882 wait 0.149 local 0.424 sel_ms 49.3 gen 0.260
+rate 9.6 seed 1 big2e4_sep      n 800 err 0 | lat 1.655 wait 0.940 local 0.416 sel_ms 32.7 gen 0.267
+rate 9.6 seed 2 big2e4_sep      n 800 err 1 | lat 2.585 wait 1.845 local 0.426 sel_ms 33.2 gen 0.281
+rate 9.6 seed 1 big2e4_shared   n 800 err 0 | lat 5.323 wait 4.537 local 0.470 sel_ms 55.2 gen 0.260
+rate 9.6 seed 2 big2e4_shared   n 800 err 0 | lat 7.013 wait 6.208 local 0.471 sel_ms 55.4 gen 0.278

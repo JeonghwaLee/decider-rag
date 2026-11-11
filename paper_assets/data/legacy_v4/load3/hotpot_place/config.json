@@ -1,0 +1,51 @@
+{
+ "args": {
+  "ds": "hotpotqa",
+  "runs": [
+   "test6/pool_00",
+   "test6/pool_01",
+   "test6/pool_02",
+   "test6/pool_03"
+  ],
+  "pol": [
+   "big2e4_shared=vdec:8197:dec-big2e4:runs/llmsel/vllm_dec_big2e4:0.18889160156250004:inf",
+   "big2e4_sep=vdec:8297:dec-big2e4:runs/llmsel/vllm_dec_big2e4:0.18889160156250004:inf"
+  ],
+  "fallback": "E",
+  "tfidf_train": "legacy:train",
+  "idx": "runs/pilot8/trace/_index",
+  "rates": [
+   6.4,
+   9.6
+  ],
+  "seeds": [
+   1,
+   2
+  ],
+  "workers": 4,
+  "burst": 0,
+  "limit": 0,
+  "cloud": "http://127.0.0.1:8193/v1",
+  "edge": "http://127.0.0.1:8195/v1",
+  "out": "runs/load3/hotpot_place"
+ },
+ "policies": {
+  "big2e4_shared": [
+   "vdec",
+   "8197",
+   "dec-big2e4",
+   "runs/llmsel/vllm_dec_big2e4",
+   "0.18889160156250004",
+   "inf"
+  ],
+  "big2e4_sep": [
+   "vdec",
+   "8297",
+   "dec-big2e4",
+   "runs/llmsel/vllm_dec_big2e4",
+   "0.18889160156250004",
+   "inf"
+  ]
+ },
+ "version": "load_ent3"
+}

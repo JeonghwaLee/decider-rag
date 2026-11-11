@@ -1,0 +1,14 @@
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+ & & \multicolumn{3}{c}{Planning time per probe (ms)$\downarrow$} & HotpotQA\\
+\cmidrule(lr){3-5}
+Selector & GPUs & HotpotQA & MuSiQue & 2Wiki & input tokens\\
+\midrule
+Decider-4B (Ours) & 1 & \textbf{26.7} & \textbf{26.5} & \textbf{25.5} & 1,731\\
+Qwen3-4B & 1 & 27.2 & 26.8 & 25.7 & 1,803\\
+Qwen3.8 zero-shot & 1 & 162.3 & 156.7 & 160.4 & 1,799\\
+Qwen3.8 few-shot & 1 & 178.6 & 234.0 & 186.4 & 8,183\\
+GLM-5.3 & 2 & 324.9 & 431.3 & 416.7 & 1,708\\
+Qwen3.8 thinking & 1 & 3,378.4 & 6,011.2 & 5,522.6 & 1,836\\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,12 @@
+runs/automix/musique_k1 | common questions 400 | policies ['automix_k1', 'joint_vllm'] | D = 23.871 s
+(1) DQ-F1 vs deadline: 0.6xD=14.32s 0.8xD=19.10s 1.0xD=23.87s 1.25xD=29.84s 1.5xD=35.81s 2.0xD=47.74s 2.5xD=59.68s 3.0xD=71.61s 4.0xD=95.48s 6.0xD=143.23s
+  automix_k1       0.3875 0.3875 0.3875 0.3875 0.3875 0.3875 0.3875 0.3875 0.3875 0.3875 | F1 0.3875 wall mean 1.518 p50 1.423 p95 2.263
+  joint_vllm       0.4613 0.4715 0.4765 0.4790 0.4979 0.4979 0.4979 0.4979 0.4979 0.4979 | F1 0.4979 wall mean 8.164 p50 1.780 p95 34.825
+  joint_vllm - automix_k1: +0.0738[+0.0440] +0.0839[+0.0536] +0.0889[+0.0582] +0.0914[+0.0603] +0.1104[+0.0806] +0.1104[+0.0806] +0.1104[+0.0806] +0.1104[+0.0806] +0.1104[+0.0806] +0.1104[+0.0806]
+(2) stage times, mean ms over requests that ran the stage (n):
+  joint_vllm       retrieve 122.4(n=400) rerank 96.4(n=400) prune 84.7(n=400) decider 29.7(n=400) cloud 7807.7(n=400) cloud_retry 167.3(n=55)
+  automix_k1       retrieve 119.4(n=400) rerank 95.7(n=400) prune 78.4(n=400) cloud 173.1(n=400) verify 1051.6(n=400)
+(3) cascade (k=1): escalation rate 0.000 | verification output tokens/request 152 | verification cloud $/1k 0.7838 | all-unparsable 0.212 (escalations from it 0.000)
+  accepted candidate with F1<0.5 (wrong accept) 0.605 | accepted with F1>=0.5 0.395 | escalated, candidate F1>=0.5 and no gain (discarded good) 0.000 | escalated with gain 0.000 | escalated, candidate F1<0.5, no gain 0.000
+(4) both keep                          n   164 (0.410) | F1 joint_vllm 0.5366 vs cascade 0.5367 | diff -0.0001 [-0.0053,+0.0044] | wall 0.572 vs 1.591
+(4) Decider escalates, cascade keeps   n   236 (0.590) | F1 joint_vllm 0.4710 vs cascade 0.2839 | diff +0.1872 [+0.1395,+0.2366] | wall 13.440 vs 1.467

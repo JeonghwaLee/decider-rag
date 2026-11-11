@@ -1,0 +1,15 @@
+2026-11-07T09:49:20Z hotpot calib rc=0 rates 2.4 6.4 9.6
+2026-11-07T10:10:50Z chain bash PID 1316838 stopped (hotpot python PID 1322544 left running); MuSiQue load moves to replica set B (run_load3_musique.sh)
+2026-11-07T10:23:42Z set B cloud PID 1418890 :8393 GPU2
+2026-11-07T10:23:42Z set B edge PID 1418892 :8395 GPU3
+2026-11-07T10:23:42Z set B decider PID 1418894 :8398 GPU6
+2026-11-07T10:33:40Z musique calib (set B) rc=0 rates 0.453 1.21 1.81
+2026-11-07T11:25:52Z hotpot test6 (set A) python exited
+2026-11-07T15:36:04Z musique test (set B) rc=0
+2026-11-07T15:36:12Z set B PID 1418890 (:8393) stopped
+2026-11-07T15:36:12Z set B PID 1418892 (:8395) stopped
+2026-11-07T15:36:12Z set B PID 1418894 (:8398) stopped
+2026-11-07T15:37:12Z placement: separate decider PID 2245544 :8297 GPU6
+2026-11-07T15:59:35Z placement hotpot rc=0
+2026-11-07T16:01:25Z stopped decider PIDs 2245544 (:8297) 1264149 (:8197) 1264150 (:8198) after placement
+2026-11-08T00:09:17Z stopped cloud PID 3260580 (:8193 GPU4) and edge PID 625541 (:8195 GPU7) on user request

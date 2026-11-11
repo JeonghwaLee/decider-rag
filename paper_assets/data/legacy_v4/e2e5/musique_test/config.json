@@ -1,0 +1,70 @@
+{
+ "args": {
+  "ds": "musique",
+  "runs": [
+   "test/pool_00",
+   "test/pool_01"
+  ],
+  "pol": [
+   "joint_vllm=vdec:8198:dec-joint:runs/llmsel/vllm_dec_joint:-inf:0.14118652343750002",
+   "joint_opt=decopt:runs/pilot9/router/joint_ent_s1234:-inf:0.14118652343750002",
+   "qwen38_think=llm:think:edge+think:-inf:0.999992110754487",
+   "qwen38_shared=llm:shared:edge+think:-inf:0.8531177699259935",
+   "tfidf_x1=tfidf:-0.08841117431659404:0.0586937229650144",
+   "ruleT_tuned=ruleT_tuned:0.65:0.1354492187500007",
+   "allN=allN"
+  ],
+  "fallback": "N",
+  "opt": false,
+  "tfidf_train": "pilot9:musique:train",
+  "idx": "runs/pilot9/trace/_index",
+  "trace": "runs/pilot9/trace/musique",
+  "out": "runs/e2e5/musique_test",
+  "limit": 0,
+  "block": 25
+ },
+ "policies": {
+  "joint_vllm": [
+   "vdec",
+   "8198",
+   "dec-joint",
+   "runs/llmsel/vllm_dec_joint",
+   "-inf",
+   "0.14118652343750002"
+  ],
+  "joint_opt": [
+   "decopt",
+   "runs/pilot9/router/joint_ent_s1234",
+   "-inf",
+   "0.14118652343750002"
+  ],
+  "qwen38_think": [
+   "llm",
+   "think",
+   "edge+think",
+   "-inf",
+   "0.999992110754487"
+  ],
+  "qwen38_shared": [
+   "llm",
+   "shared",
+   "edge+think",
+   "-inf",
+   "0.8531177699259935"
+  ],
+  "tfidf_x1": [
+   "tfidf",
+   "-0.08841117431659404",
+   "0.0586937229650144"
+  ],
+  "ruleT_tuned": [
+   "ruleT_tuned",
+   "0.65",
+   "0.1354492187500007"
+  ],
+  "allN": [
+   "allN"
+  ]
+ },
+ "version": "e2e_ent5"
+}

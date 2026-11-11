@@ -1,0 +1,46 @@
+runs/e2e5x/hotpot_test6 | common questions 800 | deadline D = p90 wall of ruleN_tuned on runs/e2e4/hotpot_calib = 0.722 s | cached input price 0.1 x
+  allN           stage ms (mean over requests that ran the stage): retrieve 97.7 rerank 95.4 prune 75.8 cloud 174.4
+  allN           E/N/T 0/800/0 | F1 0.6641 | $ answer 0.5042 + selector 0.0000 = 0.5042 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.5042 | wall mean 0.443 p50 0.384 p95 0.659 | DQ-F1 0.6586 (met 0.993)
+  big2e4_hf      stage ms (mean over requests that ran the stage): retrieve 96.3 rerank 95.7 prune 77.2 decider 58.2 edge 220.0(n=409) cloud 171.5(n=391) | placement: HF unmerged in-process GPU5
+  big2e4_hf      E/N/T 409/391/0 | F1 0.6246 | $ answer 0.2401 + selector 0.0000 = 0.2401 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.2401 | wall mean 0.524 p50 0.471 p95 0.792 | DQ-F1 0.5651 (met 0.894)
+  big2e4_opt     stage ms (mean over requests that ran the stage): retrieve 97.4 rerank 95.4 prune 77.0 decider 60.3 edge 219.3(n=410) cloud 173.1(n=390) | placement: HF merged in-process GPU5
+  big2e4_opt     E/N/T 410/390/0 | F1 0.6227 | $ answer 0.2398 + selector 0.0000 = 0.2398 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.2398 | wall mean 0.527 p50 0.474 p95 0.794 | DQ-F1 0.5564 (met 0.884)
+  big2e4_vllm    stage ms (mean over requests that ran the stage): retrieve 96.5 rerank 96.4 prune 78.0 decider 28.6 edge 220.2(n=413) cloud 172.6(n=387) | placement: vLLM decider GPU6 (local stages GPU5)
+  big2e4_vllm    E/N/T 413/387/0 | F1 0.6216 | $ answer 0.2376 + selector 0.0000 = 0.2376 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.2376 | wall mean 0.497 p50 0.445 p95 0.735 | DQ-F1 0.5910 (met 0.940)
+  qwen38_shared  stage ms (mean over requests that ran the stage): retrieve 95.9 rerank 95.7 prune 76.3 selector 155.5 cloud 136.1(n=449) edge 218.0(n=351) | placement: cloud GPU4
+  qwen38_shared  E/N/T 351/449/0 | F1 0.6227 | $ answer 0.2585 + selector 0.5091 = 0.7677 | cache hits sel 0 ans 374 tok (sel prompt 1882) -> total $ w/ cache 0.6767 | wall mean 0.595 p50 0.538 p95 0.890 | DQ-F1 0.5074 (met 0.816)
+  qwen38_zs      stage ms (mean over requests that ran the stage): retrieve 96.6 rerank 96.0 prune 76.3 selector 157.1 cloud 165.0(n=445) edge 218.8(n=355) | placement: cloud GPU4
+  qwen38_zs      E/N/T 355/445/0 | F1 0.6260 | $ answer 0.2498 + selector 0.5113 = 0.7611 | cache hits sel 0 ans 0 tok (sel prompt 1889) -> total $ w/ cache 0.7611 | wall mean 0.615 p50 0.545 p95 0.919 | DQ-F1 0.4493 (met 0.714)
+  ruleN_tuned    stage ms (mean over requests that ran the stage): retrieve 95.9 rerank 95.2 prune 75.8 complexity 30.0 cloud 169.6(n=440) edge 237.3(n=360)
+  ruleN_tuned    E/N/T 360/440/0 | F1 0.6130 | $ answer 0.2551 + selector 0.0000 = 0.2551 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.2551 | wall mean 0.497 p50 0.439 p95 0.767 | DQ-F1 0.5852 (met 0.930)
+  s1234_opt      stage ms (mean over requests that ran the stage): retrieve 96.1 rerank 95.5 prune 75.7 decider 40.3 cloud 166.1(n=415) edge 220.3(n=385) | placement: HF merged in-process GPU5
+  s1234_opt      E/N/T 385/415/0 | F1 0.6194 | $ answer 0.2355 + selector 0.0000 = 0.2355 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.2355 | wall mean 0.500 p50 0.440 p95 0.785 | DQ-F1 0.5619 (met 0.905)
+  tfidf_EN       stage ms (mean over requests that ran the stage): retrieve 97.4 rerank 98.2 prune 76.2 selector 0.9 edge 244.6(n=453) cloud 175.1(n=347)
+  tfidf_EN       E/N/T 453/347/0 | F1 0.5923 | $ answer 0.2082 + selector 0.0000 = 0.2082 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.2082 | wall mean 0.487 p50 0.436 p95 0.796 | DQ-F1 0.5644 (met 0.925)
+  big2e4_vllm - allN           F1 -0.0425 [-0.0569,-0.0290] | total $ -0.2667 [-0.2894,-0.2438] (w/ cache -0.2667) | wall +0.053 [+0.045,+0.062] | DQ-F1 -0.0677 [-0.0862,-0.0496]
+  big2e4_vllm - big2e4_hf      F1 -0.0030 [-0.0077,+0.0008] | total $ -0.0026 [-0.0063,+0.0000] (w/ cache -0.0026) | wall -0.027 [-0.030,-0.024] | DQ-F1 +0.0259 [+0.0142,+0.0385]
+  big2e4_vllm - big2e4_opt     F1 -0.0012 [-0.0044,+0.0013] | total $ -0.0022 [-0.0059,+0.0004] (w/ cache -0.0022) | wall -0.030 [-0.036,-0.025] | DQ-F1 +0.0345 [+0.0215,+0.0486]
+  big2e4_vllm - qwen38_shared  F1 -0.0011 [-0.0165,+0.0141] | total $ -0.5301 [-0.5608,-0.4999] (w/ cache -0.4391) | wall -0.099 [-0.107,-0.090] | DQ-F1 +0.0836 [+0.0596,+0.1078]
+  big2e4_vllm - qwen38_zs      F1 -0.0044 [-0.0198,+0.0104] | total $ -0.5235 [-0.5525,-0.4949] (w/ cache -0.5235) | wall -0.118 [-0.127,-0.109] | DQ-F1 +0.1416 [+0.1149,+0.1681]
+  big2e4_vllm - ruleN_tuned    F1 +0.0086 [-0.0091,+0.0260] | total $ -0.0175 [-0.0442,+0.0089] (w/ cache -0.0175) | wall -0.000 [-0.009,+0.009] | DQ-F1 +0.0058 [-0.0151,+0.0260]
+  big2e4_vllm - s1234_opt      F1 +0.0022 [-0.0125,+0.0169] | total $ +0.0020 [-0.0187,+0.0235] (w/ cache +0.0020) | wall -0.003 [-0.011,+0.005] | DQ-F1 +0.0290 [+0.0109,+0.0479]
+  big2e4_vllm - tfidf_EN       F1 +0.0293 [+0.0112,+0.0475] | total $ +0.0294 [+0.0029,+0.0559] (w/ cache +0.0294) | wall +0.010 [-0.001,+0.020] | DQ-F1 +0.0266 [+0.0059,+0.0481]
+  agreement big2e4_hf,big2e4_opt,big2e4_vllm: big2e4_hf vs big2e4_opt branch 0.9988 F1 0.6246/0.6227 ; big2e4_hf vs big2e4_vllm branch 0.9925 F1 0.6246/0.6216 ; big2e4_opt vs big2e4_vllm branch 0.9938 F1 0.6227/0.6216
+  DQ-F1 vs deadline (x D): 0.6x=0.433s 0.7x=0.505s 0.8x=0.578s 0.9x=0.650s 1.0x=0.722s 1.1x=0.794s 1.25x=0.902s 1.5x=1.083s 2.0x=1.444s
+    allN           0.4082 0.4330 0.5507 0.6148 0.6586 0.6621 0.6621 0.6641 0.6641
+    big2e4_hf      0.2263 0.3846 0.4687 0.5183 0.5651 0.6008 0.6142 0.6227 0.6246
+    big2e4_opt     0.2137 0.3679 0.4400 0.5143 0.5564 0.5958 0.6077 0.6184 0.6215
+    big2e4_vllm    0.2870 0.4003 0.4862 0.5492 0.5910 0.6035 0.6116 0.6160 0.6216
+    qwen38_shared  0.0189 0.2273 0.3507 0.4351 0.5074 0.5552 0.6011 0.6139 0.6227
+    qwen38_zs      0.0264 0.2245 0.3485 0.4046 0.4493 0.5352 0.5926 0.6157 0.6246
+    ruleN_tuned    0.2991 0.3916 0.4777 0.5478 0.5852 0.5998 0.6051 0.6111 0.6130
+    s1234_opt      0.2768 0.3899 0.4752 0.5263 0.5619 0.5968 0.6050 0.6187 0.6194
+    tfidf_EN       0.3013 0.3907 0.4831 0.5349 0.5644 0.5747 0.5835 0.5910 0.5923
+    big2e4_vllm - allN           -0.1212[-0.1481] -0.0327[-0.0568] -0.0645[-0.0856] -0.0656[-0.0851] -0.0677[-0.0862] -0.0586[-0.0756] -0.0505[-0.0665] -0.0480[-0.0632] -0.0425[-0.0569]
+    big2e4_vllm - big2e4_hf      +0.0607[+0.0426] +0.0156[+0.0039] +0.0174[+0.0065] +0.0309[+0.0177] +0.0259[+0.0142] +0.0027[-0.0062] -0.0026[-0.0092] -0.0067[-0.0130] -0.0030[-0.0077]
+    big2e4_vllm - big2e4_opt     +0.0733[+0.0555] +0.0324[+0.0195] +0.0461[+0.0327] +0.0349[+0.0219] +0.0345[+0.0215] +0.0077[-0.0013] +0.0038[-0.0036] -0.0024[-0.0079] +0.0001[-0.0037]
+    big2e4_vllm - qwen38_shared  +0.2680[+0.2398] +0.1730[+0.1434] +0.1355[+0.1077] +0.1141[+0.0889] +0.0836[+0.0596] +0.0483[+0.0268] +0.0105[-0.0073] +0.0021[-0.0145] -0.0011[-0.0165]
+    big2e4_vllm - qwen38_zs      +0.2605[+0.2323] +0.1757[+0.1465] +0.1377[+0.1102] +0.1446[+0.1176] +0.1416[+0.1149] +0.0683[+0.0458] +0.0190[+0.0005] +0.0003[-0.0166] -0.0031[-0.0185]
+    big2e4_vllm - ruleN_tuned    -0.0121[-0.0369] +0.0087[-0.0135] +0.0084[-0.0133] +0.0014[-0.0207] +0.0058[-0.0151] +0.0037[-0.0162] +0.0065[-0.0123] +0.0049[-0.0135] +0.0086[-0.0091]
+    big2e4_vllm - s1234_opt      +0.0102[-0.0111] +0.0104[-0.0083] +0.0109[-0.0071] +0.0229[+0.0054] +0.0290[+0.0109] +0.0067[-0.0093] +0.0065[-0.0095] -0.0026[-0.0178] +0.0022[-0.0125]
+    big2e4_vllm - tfidf_EN       -0.0144[-0.0417] +0.0096[-0.0155] +0.0031[-0.0205] +0.0143[-0.0071] +0.0266[+0.0059] +0.0288[+0.0090] +0.0281[+0.0088] +0.0250[+0.0064] +0.0293[+0.0112]

@@ -1,0 +1,16 @@
+JUDGE glm53 (auxiliary) | stream pilot8:hotpotqa:test4+pilot8:hotpotqa:test5+pilot8:hotpotqa:test6 n 3200 | fam E/N fb E x1.0 budget $ 0.1852 | orders 5
+  decider      online F1 0.7454 $ 0.1855 (1.00x budget; per order 1.01 0.99 1.00 1.01 1.00) | fixed thr F1 0.7591 $ 0.2185 (1.18x)
+  qwen38_zs    online F1 0.7446 $ 0.1854 (1.00x budget; per order 1.00 0.99 1.01 1.00 1.01) | fixed thr F1 0.7647 $ 0.2262 (1.22x)
+  qwen38_shared online F1 0.7428 $ 0.1854 (1.00x budget; per order 1.00 0.99 1.01 1.00 1.01) | fixed thr F1 0.7633 $ 0.2407 (1.30x)
+  glm          online F1 0.7391 $ 0.1849 (1.00x budget; per order 1.00 0.99 1.02 0.99 0.99) | fixed thr F1 0.7525 $ 0.2292 (1.24x)
+  qwen3_4b     online F1 0.7296 $ 0.1854 (1.00x budget; per order 1.00 1.00 1.01 1.00 1.00) | fixed thr F1 0.7420 $ 0.2205 (1.19x)
+  qwen38_fs    online F1 0.7449 $ 0.1849 (1.00x budget; per order 0.99 0.99 1.01 1.00 1.00) | fixed thr F1 0.7666 $ 0.2506 (1.35x)
+  qwen38_think online F1 0.7417 $ 0.1856 (1.00x budget; per order 0.99 0.99 1.02 1.00 1.01) | fixed thr F1 0.7495 $ 0.2155 (1.16x)
+  tfidf        online F1 0.7303 $ 0.1858 (1.00x budget; per order 1.01 1.00 1.00 1.01 1.00) | fixed thr F1 0.7361 $ 0.1945 (1.05x)
+  decider - qwen38_zs    +0.0008 [-0.0058,+0.0073] | $ diff +0.0001
+  decider - qwen38_shared +0.0026 [-0.0039,+0.0090] | $ diff +0.0002
+  decider - glm          +0.0064 [-0.0001,+0.0128] | $ diff +0.0006
+  decider - qwen3_4b     +0.0158 [+0.0084,+0.0234] | $ diff +0.0002
+  decider - qwen38_fs    +0.0005 [-0.0057,+0.0066] | $ diff +0.0006
+  decider - qwen38_think +0.0038 [-0.0029,+0.0106] | $ diff -0.0000
+  decider - tfidf        +0.0151 [+0.0081,+0.0220] | $ diff -0.0003

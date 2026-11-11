@@ -1,0 +1,36 @@
+runs/e2e5/musique_test | common questions 400 | deadline D = p90 wall of ruleT_tuned on runs/e2e4/musique_calib = 23.871 s | cached input price 0.1 x
+  allN           stage ms (mean over requests that ran the stage): retrieve 114.7 rerank 95.0 prune 74.7 cloud 170.1
+  allN           E/N/T 0/400/0 | F1 0.3874 | $ answer 0.4638 + selector 0.0000 = 0.4638 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 0.4638 | wall mean 0.454 p50 0.390 p95 0.689 | DQ-F1 0.3874 (met 1.000)
+  joint_opt      stage ms (mean over requests that ran the stage): retrieve 119.7 rerank 96.4 prune 77.5 decider 85.4 cloud 7907.4 cloud_retry 164.4(n=50) | placement: HF merged in-process GPU5
+  joint_opt      E/N/T 0/161/239 | F1 0.4963 | $ answer 2.0384 + selector 0.0000 = 2.0384 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 2.0384 | wall mean 8.307 p50 1.857 p95 34.860 | DQ-F1 0.4789 (met 0.835)
+  joint_vllm     stage ms (mean over requests that ran the stage): retrieve 119.1 rerank 101.4 prune 76.9 decider 33.9 cloud 7696.9 cloud_retry 155.4(n=52) | placement: vLLM decider GPU6 (local stages GPU5)
+  joint_vllm     E/N/T 0/164/236 | F1 0.4993 | $ answer 1.9970 + selector 0.0000 = 1.9970 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 1.9970 | wall mean 8.049 p50 1.765 p95 34.808 | DQ-F1 0.4766 (met 0.848)
+  qwen38_shared  stage ms (mean over requests that ran the stage): retrieve 120.0 rerank 96.7 prune 72.9 selector 232.3 cloud 8776.4 cloud_retry 156.8(n=56) | placement: cloud selector GPU4
+  qwen38_shared  E/N/T 0/138/262 | F1 0.4549 | $ answer 2.2309 + selector 0.9362 = 3.1671 | cache hits sel 690 ans 270 tok (sel prompt 3459) -> total $ w/ cache 2.9337 | wall mean 9.320 p50 2.604 p95 35.116 | DQ-F1 0.4206 (met 0.820)
+  qwen38_think   stage ms (mean over requests that ran the stage): retrieve 131.6 rerank 99.8 prune 78.5 selector 11599.0 cloud 7424.7 cloud_retry 183.6(n=48) | placement: cloud selector GPU4
+  qwen38_think   E/N/T 0/187/213 | F1 0.4443 | $ answer 1.9499 + selector 3.5754 = 5.5253 | cache hits sel 827 ans 0 tok (sel prompt 3555) -> total $ w/ cache 5.3243 | wall mean 19.356 p50 15.454 p95 54.803 | DQ-F1 0.3895 (met 0.752)
+  ruleT_tuned    stage ms (mean over requests that ran the stage): retrieve 122.1 rerank 96.7 prune 74.9 complexity 41.2 edge 295.3(n=117) cloud 14237.2(n=283) cloud_retry 181.0(n=69)
+  ruleT_tuned    E/N/T 117/0/283 | F1 0.3963 | $ answer 2.3585 + selector 0.0000 = 2.3585 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 2.3585 | wall mean 10.525 p50 3.465 p95 34.972 | DQ-F1 0.3591 (met 0.795)
+  tfidf_x1       stage ms (mean over requests that ran the stage): retrieve 120.6 rerank 97.6 prune 73.5 selector 2.2 cloud 6963.5 cloud_retry 177.5(n=46)
+  tfidf_x1       E/N/T 0/177/223 | F1 0.4504 | $ answer 1.8524 + selector 0.0000 = 1.8524 | cache hits sel 0 ans 0 tok (sel prompt 0) -> total $ w/ cache 1.8524 | wall mean 7.278 p50 1.335 p95 34.784 | DQ-F1 0.4253 (met 0.855)
+  joint_vllm - allN           F1 +0.1119 [+0.0820,+0.1430] | total $ +1.5332 [+1.2967,+1.7800] (w/ cache +1.5332) | wall +7.594 [+6.441,+8.801] | DQ-F1 +0.0892 [+0.0591,+0.1205]
+  joint_vllm - joint_opt      F1 +0.0029 [-0.0097,+0.0156] | total $ -0.0414 [-0.1353,+0.0461] (w/ cache -0.0414) | wall -0.259 [-0.711,+0.162] | DQ-F1 -0.0023 [-0.0137,+0.0086]
+  joint_vllm - qwen38_shared  F1 +0.0444 [+0.0170,+0.0729] | total $ -1.1701 [-1.4616,-0.8880] (w/ cache -0.9367) | wall -1.272 [-2.597,+0.009] | DQ-F1 +0.0560 [+0.0273,+0.0853]
+  joint_vllm - qwen38_think   F1 +0.0550 [+0.0287,+0.0826] | total $ -3.5283 [-3.8461,-3.2178] (w/ cache -3.3273) | wall -11.307 [-12.738,-9.928] | DQ-F1 +0.0871 [+0.0577,+0.1175]
+  joint_vllm - ruleT_tuned    F1 +0.1030 [+0.0682,+0.1382] | total $ -0.3615 [-0.6158,-0.1107] (w/ cache -0.3615) | wall -2.477 [-3.645,-1.317] | DQ-F1 +0.1175 [+0.0830,+0.1532]
+  joint_vllm - tfidf_x1       F1 +0.0489 [+0.0260,+0.0734] | total $ +0.1446 [-0.0931,+0.3841] (w/ cache +0.1446) | wall +0.770 [-0.383,+1.937] | DQ-F1 +0.0513 [+0.0272,+0.0767]
+  agreement joint_opt,joint_vllm: joint_opt vs joint_vllm branch 0.9925 F1 0.4963/0.4993
+  DQ-F1 vs deadline (x D): 0.6x=14.323s 0.7x=16.710s 0.8x=19.097s 0.9x=21.484s 1.0x=23.871s 1.1x=26.259s 1.25x=29.839s 1.5x=35.807s 2.0x=47.743s
+    allN           0.3874 0.3874 0.3874 0.3874 0.3874 0.3874 0.3874 0.3874 0.3874
+    joint_opt      0.4656 0.4721 0.4746 0.4764 0.4789 0.4849 0.4849 0.4963 0.4963
+    joint_vllm     0.4686 0.4707 0.4741 0.4741 0.4766 0.4826 0.4838 0.4993 0.4993
+    qwen38_shared  0.3979 0.4029 0.4121 0.4146 0.4206 0.4236 0.4306 0.4549 0.4549
+    qwen38_think   0.2706 0.3067 0.3201 0.3564 0.3895 0.3997 0.4038 0.4140 0.4288
+    ruleT_tuned    0.3367 0.3476 0.3517 0.3531 0.3591 0.3628 0.3628 0.3963 0.3963
+    tfidf_x1       0.4148 0.4160 0.4185 0.4203 0.4253 0.4265 0.4278 0.4504 0.4504
+    joint_vllm - allN           +0.0813[+0.0512] +0.0834[+0.0536] +0.0867[+0.0572] +0.0867[+0.0572] +0.0892[+0.0591] +0.0952[+0.0643] +0.0965[+0.0655] +0.1119[+0.0820] +0.1119[+0.0820]
+    joint_vllm - joint_opt      +0.0031[-0.0068] -0.0013[-0.0132] -0.0005[-0.0101] -0.0023[-0.0113] -0.0023[-0.0137] -0.0023[-0.0141] -0.0011[-0.0130] +0.0029[-0.0097] +0.0029[-0.0097]
+    joint_vllm - qwen38_shared  +0.0707[+0.0430] +0.0678[+0.0399] +0.0620[+0.0335] +0.0595[+0.0312] +0.0560[+0.0273] +0.0590[+0.0294] +0.0532[+0.0243] +0.0444[+0.0170] +0.0444[+0.0170]
+    joint_vllm - qwen38_think   +0.1981[+0.1618] +0.1640[+0.1296] +0.1539[+0.1193] +0.1177[+0.0869] +0.0871[+0.0577] +0.0829[+0.0534] +0.0800[+0.0505] +0.0853[+0.0563] +0.0705[+0.0425]
+    joint_vllm - ruleT_tuned    +0.1319[+0.0964] +0.1232[+0.0885] +0.1224[+0.0874] +0.1210[+0.0862] +0.1175[+0.0830] +0.1197[+0.0839] +0.1210[+0.0854] +0.1030[+0.0682] +0.1030[+0.0682]
+    joint_vllm - tfidf_x1       +0.0538[+0.0286] +0.0547[+0.0293] +0.0555[+0.0307] +0.0538[+0.0291] +0.0513[+0.0272] +0.0561[+0.0312] +0.0561[+0.0312] +0.0489[+0.0260] +0.0489[+0.0260]
