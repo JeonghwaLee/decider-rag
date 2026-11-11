@@ -92,7 +92,8 @@ Main entry points:
 The five trained models used in the paper (Decider for HotpotQA, MuSiQue and 2Wiki; Decider-Post
 for HotpotQA and MuSiQue) are released separately as LoRA + head checkpoints (about 51 MB each)
 with their validation-calibrated policies, a standalone loader (`decider.py`) and a smoke test
-that reproduces the recorded scores.
+that reproduces the recorded scores:
+<https://huggingface.co/norip76/decider-rag-checkpoints>.
 
 Full retrieval traces and stored plan answers (HotpotQA 5.1 GB, MuSiQue 1.8 GB, 2Wiki 1.3 GB),
 needed to re-run training and the offline replays end to end, are not part of this repository.
